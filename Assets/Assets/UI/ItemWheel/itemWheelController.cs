@@ -6,7 +6,7 @@ public class itemWheelController : MonoBehaviour
 {
     public Animator anim;
     private bool itemWheelSelected = false;
-    public UnityEngine.UI.Image selectedItem;
+    public GameObject selectedItem;
     public Sprite noImage;
     public static int itemID;
 
@@ -32,23 +32,26 @@ public class itemWheelController : MonoBehaviour
             anim.SetBool("OpenItemWheel",false);
         }
 
-        switch (itemID)
+        if(itemWheelSelected)
         {
-            case 0: // No Item
-                selectedItem.sprite = noImage;
-                break;
-            case 1: // Basic Wool
-                Debug.Log("Basic");
-                break;
-            case 2: // Fire Wool
-                Debug.Log("Fire");
-                break;
-            case 3: // Sticky Wool
-                Debug.Log("Sticky");
-                break;
-            case 4: // Magnet Wool
-                Debug.Log("Magnet");
-                break;
+            switch (itemID)
+            {
+                case 0: // No Item
+                    selectedItem.GetComponent<SpriteRenderer>().sprite = noImage;
+                    break;
+                case 1: // Basic Wool
+                    Debug.Log("Basic");
+                    break;
+                case 2: // Fire Wool
+                    Debug.Log("Fire");
+                    break;
+                case 3: // Sticky Wool
+                    Debug.Log("Sticky");
+                    break;
+                case 4: // Magnet Wool
+                    Debug.Log("Magnet");
+                    break;
+            }
         }
     }
 }

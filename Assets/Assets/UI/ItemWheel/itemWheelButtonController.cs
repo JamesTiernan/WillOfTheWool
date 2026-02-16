@@ -9,9 +9,11 @@ public class itemWheelButtonController : MonoBehaviour
     private Animator anim;
     public string itemName;
     public TextMeshProUGUI itemText;
-    public UnityEngine.UI.Image selectedItem;
+    public GameObject selectedItem;
     private bool selected = false;
     public Sprite icon;
+
+    bool isOpen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,32 +23,37 @@ public class itemWheelButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        isOpen = GetComponentInParent<itemWheelController>();
         if (selected)
         {
-            selectedItem.sprite = icon;
+            selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
             itemText.text = itemName;
         }
     }
 
     public void Selected()
     {
+        if(!isOpen){return;}
         selected = true;
         itemWheelController.itemID = ID;
     }
 
     public void Deselected()
     {
+        if(!isOpen){return;}
         selected = false;
         itemWheelController.itemID = 0;
     }
 
     public void HoverEnter()
     {
+        if(!isOpen){return;}
         anim.SetBool("hover",true);
         itemText.text = itemName;
     }
     public void HoverExit()
     {
+        if(!isOpen){return;}
         anim.SetBool("hover",false);
         itemText.text = "";
     }

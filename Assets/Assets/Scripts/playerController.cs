@@ -7,6 +7,7 @@ public class playerController : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] Rigidbody2D rb;
+    [SerializeField] Animator animator;
 
     [Header("Movement")]
     [SerializeField] float speed;
@@ -16,6 +17,9 @@ public class playerController : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     [SerializeField] Transform groundCheck;
 
+    [Header("Wool")]
+    [SerializeField] GameObject woolPrefab;
+    [SerializeField] GameObject throwSpawnPosition;
 
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -25,6 +29,7 @@ public class playerController : MonoBehaviour
       DontDestroyOnLoad(gameObject);
       rb = GetComponent<Rigidbody2D>();
       playerSprite = GetComponent<SpriteRenderer>();
+      animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -48,5 +53,21 @@ public class playerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer);
+    }
+
+    public void throwWool()
+    {
+        GameObject newObj = Instantiate(woolPrefab);
+        newObj.transform.position = gameObject.transform.position;
+        if(newObj.transform.position.x > 0)
+        {
+            newObj.GetComponent<Rigidbody2D>().linearVelocityX =  20;
+        }
+        else{newObj.GetComponent<Rigidbody2D>().linearVelocityX = -20;}
+        
+    }
+    public void throwAnimationPlay()
+    {
+        animator.Play("playerThrowWool");
     }
 }
