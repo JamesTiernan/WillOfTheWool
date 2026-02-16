@@ -13,20 +13,22 @@ public class LevelChanger : MonoBehaviour
     [SerializeField]
     private Transform Spawnpoint;
 
+    GameObject player;
+
     private void Start()
     {
         if (_connection == LevelConnection.ActiveConnection)
         {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.FindGameObjectWithTag("Player");
             player.transform.position = Spawnpoint.position;
         }
 
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         
-        if (other.collider.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             LevelConnection.ActiveConnection = _connection;
             SceneManager.LoadScene(_targetSceneName);
