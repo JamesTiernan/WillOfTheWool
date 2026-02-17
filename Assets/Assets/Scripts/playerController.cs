@@ -67,6 +67,7 @@ public class playerController : MonoBehaviour
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);}}
+        animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
     }
 
     public void Jump(InputAction.CallbackContext context)
