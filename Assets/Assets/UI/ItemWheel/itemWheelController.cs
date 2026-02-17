@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 public class itemWheelController : MonoBehaviour
 {
     public Animator anim;
-    private bool itemWheelSelected = false;
+    public bool itemWheelSelected = false;
     public GameObject selectedItem;
     public Sprite noImage;
     public static int itemID;

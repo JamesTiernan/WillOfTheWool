@@ -3658,6 +3658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 2046456485}
+  itemWheelSelected: 0
   selectedItem: {fileID: 1526360662}
   noImage: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!1 &2054019641
@@ -4376,7 +4377,7 @@ Rigidbody2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -4553,7 +4554,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4069240698799143252}
-  animator: {fileID: 0}
+  animator: {fileID: 6099702683716781073}
+  itemWheelGUI: {fileID: 2046456486}
+  playerRig: {fileID: 894457539}
   speed: 7
   jumpPower: 7.3
   groundLayer:
@@ -4562,6 +4565,7 @@ MonoBehaviour:
   groundCheck: {fileID: 1053197132765696755}
   woolPrefab: {fileID: 751572364290207952, guid: 05010aacc43dc77448430fdb4da9a8ed, type: 3}
   heldWool: {fileID: 1526360662}
+  noWool: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!81 &5630550802688257471
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4889,7 +4893,7 @@ GameObject:
   - component: {fileID: 4170347209661501784}
   - component: {fileID: 6099702683716781073}
   - component: {fileID: 8421459802755115085}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
