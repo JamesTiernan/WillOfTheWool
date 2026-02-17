@@ -62,11 +62,11 @@ public class playerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         horizontal = context.ReadValue<Vector2>().x;
-        if(horizontal>0 || horizontal != 0)
+        if(horizontal > 0 && horizontal != 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        else{transform.localScale = new Vector3(-1f, 1f, 1f);}
+        else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);}}
     }
 
     public void Jump(InputAction.CallbackContext context)
