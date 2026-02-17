@@ -19,7 +19,8 @@ public class playerController : MonoBehaviour
 
     [Header("Wool")]
     [SerializeField] GameObject woolPrefab;
-    [SerializeField] GameObject throwSpawnPosition;
+    [SerializeField] GameObject heldWool;
+    [SerializeField] Sprite noWool;
 
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -58,7 +59,9 @@ public class playerController : MonoBehaviour
     public void throwWool()
     {
         GameObject newObj = Instantiate(woolPrefab);
-        newObj.transform.position = gameObject.transform.position;
+        newObj.transform.position = heldWool.transform.position;
+        newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
+        heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         if(newObj.transform.position.x > 0)
         {
             newObj.GetComponent<Rigidbody2D>().linearVelocityX =  20;
