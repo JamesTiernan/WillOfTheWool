@@ -1,36 +1,52 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class LevelChanger : MonoBehaviour
 {
-    [SerializeField]
-    private LevelConnection _connection;
+    [SerializeField] private LevelConnection _connection;
+    [SerializeField] private string _targetSceneName;
+    [SerializeField] private Transform Spawnpoint;
+    [SerializeField] private Animator fadeAnimator;
 
-
-    [SerializeField]
-    private string _targetSceneName;
-
-    [SerializeField]
-    private Transform Spawnpoint;
-
-    GameObject player;
+    private GameObject player;
 
     private void Start()
     {
-        if (_connection == LevelConnection.ActiveConnection)
-        {
-            player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = Spawnpoint.position;
-        }
+        player = GameObject.FindGameObjectWithTag("Player");
 
+        if (fadeAnimator == null)
+            fadeAnimator = GameObject.Find("Fade").GetComponent<Animator>();
+
+        if (_connection == LevelConnection.ActiveConnection && player != null)
+            player.transform.position = Spawnpoint.position;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        
         if (other.CompareTag("Player"))
+            StartCoroutine(FadeBlackoutTeleport());
+    }
+
+    private IEnumerator FadeBlackoutTeleport()
+    {
+        fadeAnimator.SetTrigger("FadeOut");
+        yield return new WaitForSeconds(1f);
+
+        fadeAnimator.SetTrigger("black");
+        yield return new WaitForSeconds(1f); 
+
+        LevelConnection.ActiveConnection = _connection;
+
+        if (_targetSceneName == SceneManager.GetActiveScene().name)
         {
-            LevelConnection.ActiveConnection = _connection;
+            if (player == null)
+                player = GameObject.FindGameObjectWithTag("Player");
+
+            player.transform.position = Spawnpoint.position;
+        }
+        else
+        {
             SceneManager.LoadScene(_targetSceneName);
         }
     }
