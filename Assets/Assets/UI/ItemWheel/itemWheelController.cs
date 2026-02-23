@@ -31,7 +31,7 @@ public class itemWheelController : MonoBehaviour
         {
             anim.SetBool("OpenItemWheel",false);
         }
-
+        /*
         if(itemWheelSelected)
         {
             switch (itemID)
@@ -52,6 +52,6 @@ public class itemWheelController : MonoBehaviour
                     Debug.Log("Magnet");
                     break;
             }
-        }
+        }*/
     }
 }
