@@ -2021,7 +2021,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -3095,6 +3095,10 @@ PrefabInstance:
       value: LevelChanger
       objectReference: {fileID: 0}
     - target: {fileID: 3413319393454918559, guid: 8fa39401869eb1042b03d164a1b87ce6, type: 3}
+      propertyPath: fadeImage
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3413319393454918559, guid: 8fa39401869eb1042b03d164a1b87ce6, type: 3}
       propertyPath: Spawnpoint
       value: 
       objectReference: {fileID: 189240611}
@@ -3102,6 +3106,10 @@ PrefabInstance:
       propertyPath: _connection
       value: 
       objectReference: {fileID: 11400000, guid: d856ab6bc9bcbf8449373df6f6fd550e, type: 2}
+    - target: {fileID: 3413319393454918559, guid: 8fa39401869eb1042b03d164a1b87ce6, type: 3}
+      propertyPath: fadeAnimator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3413319393454918559, guid: 8fa39401869eb1042b03d164a1b87ce6, type: 3}
       propertyPath: _targetSceneName
       value: Level2
