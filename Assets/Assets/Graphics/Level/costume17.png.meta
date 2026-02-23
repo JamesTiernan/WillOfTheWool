@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: efdcb6a1da8248045847269ab491b3fa
+guid: d81fb721d131b9d4ca4999ef3a3ca041
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5245570538613121200
-    second: basicWool_0
+      213: -9043230463014646062
+    second: costume17_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 120
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: basicWool_0
+      name: costume17_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 38
-        height: 38
+        width: 44
+        height: 53
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05fd5b9236df337b0800000000000000
-      internalID: -5245570538613121200
+      spriteID: 2de45069ecdff7280800000000000000
+      internalID: -9043230463014646062
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 440fb97bcf27fbd478e0ccc7c3786b13
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      basicWool_0: -5245570538613121200
+      costume17_0: -9043230463014646062
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

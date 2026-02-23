@@ -49,7 +49,7 @@ public class playerController : MonoBehaviour
             Vector2 screenPosition = Mouse.current.position.ReadValue();
             mouseWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
             mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)gameObject.transform.position;
-            Debug.Log($"World Position: {mouseWorldPosition}");
+            //Debug.Log($"World Position: {mouseWorldPosition}");
         }
 
     }

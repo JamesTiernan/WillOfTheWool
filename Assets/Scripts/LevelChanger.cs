@@ -31,10 +31,10 @@ public class LevelChanger : MonoBehaviour
     private IEnumerator FadeBlackoutTeleport()
     {
         fadeAnimator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
 
         fadeAnimator.SetTrigger("black");
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(0.2f);
 
         LevelConnection.ActiveConnection = _connection;
 
@@ -49,5 +49,6 @@ public class LevelChanger : MonoBehaviour
         {
             SceneManager.LoadScene(_targetSceneName);
         }
+        
     }
 }
