@@ -8,6 +8,6 @@ public class basicWool : MonoBehaviour
     public void Create()
     {
         GameObject newObj = Instantiate(woolPrefab);
-        newObj.transform.position = new Vector2(Mathf.Round(transform.position.x / gridSize) * gridSize,Mathf.Round(transform.position.y / gridSize) * gridSize);
+        newObj.transform.position = new Vector2(Mathf.Round(transform.position.x / (gridSize*2)) * (gridSize*2),Mathf.Round(transform.position.y / gridSize) * gridSize);
     }
 }
