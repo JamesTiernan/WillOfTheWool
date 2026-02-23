@@ -1420,6 +1420,7 @@ GameObject:
   - component: {fileID: 570415595}
   - component: {fileID: 570415594}
   - component: {fileID: 570415593}
+  - component: {fileID: 570415597}
   m_Layer: 3
   m_Name: NPC
   m_TagString: Untagged
@@ -1537,12 +1538,29 @@ Transform:
   m_GameObject: {fileID: 570415592}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.6221, y: 3.3567, z: 0}
+  m_LocalPosition: {x: 7.43, y: 3.1, z: 0}
   m_LocalScale: {x: 0.6757, y: 2.7735, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &570415597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 570415592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91945bfdc2688c94fb078d422b5257e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueData: {fileID: 11400000, guid: 0f5582f9876be5446876c245363fc201, type: 2}
+  dialoguePanel: {fileID: 0}
+  dialogueText: {fileID: 0}
+  nameText: {fileID: 0}
+  portraitImage: {fileID: 0}
 --- !u!1 &606207380
 GameObject:
   m_ObjectHideFlags: 0
