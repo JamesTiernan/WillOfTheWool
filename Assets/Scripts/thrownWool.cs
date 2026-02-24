@@ -13,4 +13,25 @@ public class thrownWool : MonoBehaviour
     {
         
     }
+    
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        Sprite woolSprite = GetComponent<SpriteRenderer>().sprite;
+        Debug.Log(woolSprite.name);
+        if(woolSprite.name == "stickyWool")
+        {
+            GetComponent<stickyWool>().Create();
+            Destroy(gameObject);
+        }
+        if(woolSprite.name == "fireWool")
+        {
+            GetComponent<fireWool>().Create();
+            Destroy(gameObject);
+        }
+        if(woolSprite.name == "basicWool")
+        {
+            GetComponent<basicWool>().Create();
+            Destroy(gameObject);
+        }
+    }
 }

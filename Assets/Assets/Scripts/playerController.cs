@@ -56,6 +56,13 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(IsGrounded())
+        {
+            animator.SetBool("onGround?",true);
+            animator.SetBool("isJumping",false);
+        }
+        else{animator.SetBool("onGround?",false);}
+        animator.SetFloat("yVelocity",rb.linearVelocityY);
         rb.linearVelocityX = horizontal * speed;
     }
 
@@ -74,7 +81,9 @@ public class playerController : MonoBehaviour
     {
         if(context.performed && IsGrounded())
         {
+            animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
+            gameObject.transform.position += Vector3.up * .1f;
         }
     }
 

@@ -13,6 +13,7 @@ public class LevelChanger : MonoBehaviour
 
     private void Start()
     {
+        GetComponent<SpriteRenderer>().sprite = null;
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (fadeAnimator == null)
@@ -31,10 +32,10 @@ public class LevelChanger : MonoBehaviour
     private IEnumerator FadeBlackoutTeleport()
     {
         fadeAnimator.SetTrigger("FadeOut");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.32f);
 
         fadeAnimator.SetTrigger("black");
-        yield return new WaitForSeconds(1f); 
+        yield return new WaitForSeconds(0.1f);
 
         LevelConnection.ActiveConnection = _connection;
 
@@ -49,5 +50,6 @@ public class LevelChanger : MonoBehaviour
         {
             SceneManager.LoadScene(_targetSceneName);
         }
+        
     }
 }
