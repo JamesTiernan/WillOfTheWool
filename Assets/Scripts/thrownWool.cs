@@ -2,21 +2,31 @@ using UnityEngine;
 
 public class thrownWool : MonoBehaviour
 {
+    Sprite woolSprite;
+    magnetWool updateScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        woolSprite = GetComponent<SpriteRenderer>().sprite;
+        Debug.Log(woolSprite.name);
+        if(woolSprite.name == "magnetWool")
+        {
+            updateScript = GetComponent<magnetWool>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(updateScript != null)
+        {
+            updateScript.CheckMagnetic();
+        }
     }
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Sprite woolSprite = GetComponent<SpriteRenderer>().sprite;
+        woolSprite = GetComponent<SpriteRenderer>().sprite;
         Debug.Log(woolSprite.name);
         if(woolSprite.name == "stickyWool")
         {
