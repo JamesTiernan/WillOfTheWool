@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4717725607166227646}
   - component: {fileID: -8612319895566541369}
   - component: {fileID: 8618077362738426657}
+  - component: {fileID: -3751390148400349645}
   m_Layer: 7
   m_Name: Wool
   m_TagString: Untagged
@@ -221,3 +222,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9a80efe1b605047a2dc9d3cd7e313f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3751390148400349645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751572364290207952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3899f0401e8038543b1541fb91c8a5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
