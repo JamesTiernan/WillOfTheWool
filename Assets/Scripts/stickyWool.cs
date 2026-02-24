@@ -8,7 +8,5 @@ public class stickyWool : MonoBehaviour
     {
         GameObject newObj = Instantiate(stickyPrefab);
         newObj.transform.position = transform.position;
-
-        Destroy(gameObject);
     }
 }
