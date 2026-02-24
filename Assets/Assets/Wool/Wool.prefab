@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3223162891043879517}
   - component: {fileID: 4717725607166227646}
   - component: {fileID: -8612319895566541369}
+  - component: {fileID: 8618077362738426657}
   m_Layer: 7
   m_Name: Wool
   m_TagString: Untagged
@@ -208,3 +209,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSize: 1
   woolPrefab: {fileID: 4906193518704839772, guid: 9e484ede8b380ea45af4a979f989eb30, type: 3}
+--- !u!114 &8618077362738426657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751572364290207952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9a80efe1b605047a2dc9d3cd7e313f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
