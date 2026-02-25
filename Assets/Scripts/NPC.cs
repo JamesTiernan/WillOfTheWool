@@ -14,6 +14,16 @@ public class NPC : MonoBehaviour, IInteractable
     private bool isTyping, isDialogueActive;
 
 
+    void Start()
+    {
+        dialoguePanel = GameObject.Find("DialoguePanel");
+        dialogueText = GameObject.Find("DialogueText").GetComponent<TMP_Text>();
+        nameText = GameObject.Find("NPCNameText").GetComponent<TMP_Text>();
+        portraitImage = GameObject.Find("DialoguePortrait").GetComponent<Image>();
+        GameObject.Find("Close").GetComponent<Button>().onClick.AddListener(EndDialogue);
+        dialoguePanel.SetActive(false);
+    }
+
     public bool IsInteractable()
     {
         return !isDialogueActive;
