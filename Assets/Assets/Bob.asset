@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35750c24b86b6674598bbf2a90ef226c, type: 3}
-  m_Name: NewNPCDialogue
+  m_Name: Bob
   m_EditorClassIdentifier: 
-  npcName: 
-  npcImage: {fileID: 0}
-  dialogue: []
+  npcName: Bob
+  npcImage: {fileID: 21300000, guid: d7cd45e1ead905b4b8b3fda83069d7ce, type: 3}
+  dialogue:
+  - TestTest
   autoProgressLines: 
   autoProgressDelay: 1.5
   typeSpeed: 0
