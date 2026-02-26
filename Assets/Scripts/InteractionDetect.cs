@@ -9,8 +9,8 @@ public class InteractionDetect : MonoBehaviour
 
 
     void Start()
-    { 
-    InteractIcon.SetActive(false);
+    {
+        InteractIcon.SetActive(false);
     }
 
     public void OnInteract(InputAction.CallbackContext context)

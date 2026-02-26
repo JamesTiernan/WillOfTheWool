@@ -14,6 +14,16 @@ public class NPC : MonoBehaviour, IInteractable
     private bool isTyping, isDialogueActive;
 
 
+    void Start()
+    {
+        dialoguePanel = GameObject.Find("DialoguePanel");
+        dialogueText = GameObject.Find("DialogueText").GetComponent<TMP_Text>();
+        nameText = GameObject.Find("NPCNameText").GetComponent<TMP_Text>();
+        portraitImage = GameObject.Find("DialoguePortrait").GetComponent<Image>();
+        GameObject.Find("Close").GetComponent<Button>().onClick.AddListener(EndDialogue);
+        dialoguePanel.SetActive(false);
+    }
+
     public bool IsInteractable()
     {
         return !isDialogueActive;
@@ -22,7 +32,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(dialogueData == null)
+        if (dialogueData == null)
             return;
 
         if (isDialogueActive)
@@ -33,30 +43,30 @@ public class NPC : MonoBehaviour, IInteractable
 
 
     void StartDialogue()
-    { 
-    isDialogueActive = true;    
-    dialogueIndex = 0;
+    {
+        isDialogueActive = true;
+        dialogueIndex = 0;
 
-        nameText.SetText (dialogueData.name);
+        nameText.SetText(dialogueData.name);
         portraitImage.sprite = dialogueData.npcImage;
 
-        dialoguePanel.SetActive (true);
+        dialoguePanel.SetActive(true);
 
 
         StartCoroutine(TypeLine());
     }
 
     void NextLine()
-    { 
-    if(isTyping)
-        { 
+    {
+        if (isTyping)
+        {
             StopAllCoroutines();
             dialogueText.SetText(dialogueData.dialogue[dialogueIndex]);
-            isTyping = false;   
+            isTyping = false;
         }
-        else if(++dialogueIndex < dialogueData.dialogue.Length)
+        else if (++dialogueIndex < dialogueData.dialogue.Length)
         { StartCoroutine(TypeLine()); }
-        else{ EndDialogue(); }
+        else { EndDialogue(); }
     }
 
     IEnumerator TypeLine()
@@ -64,12 +74,12 @@ public class NPC : MonoBehaviour, IInteractable
         isTyping = true;
         dialogueText.SetText("");
         foreach (char letter in dialogueData.dialogue[dialogueIndex])
-        { 
-        dialogueText.text += letter;
+        {
+            dialogueText.text += letter;
             yield return new WaitForSeconds(dialogueData.typeSpeed);
 
         }
-        isTyping =false;
+        isTyping = false;
 
         if (dialogueData.autoProgressLines.Length > dialogueIndex && dialogueData.autoProgressLines[dialogueIndex])
         {
@@ -84,6 +94,6 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
-        
+
     }
 }
