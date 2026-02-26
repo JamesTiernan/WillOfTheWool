@@ -5,10 +5,11 @@ using System.Collections;
 
 public class NPC : MonoBehaviour, IInteractable
 {
-    public NPCDialogue dialogueData;
-    public GameObject dialoguePanel;
-    public TMP_Text dialogueText, nameText;
-    public Image portraitImage;
+    [SerializeField] private NPCDialogue dialogueData;
+    [SerializeField] private GameObject dialoguePanel;
+    [SerializeField] private TMP_Text dialogueText, nameText;
+    [SerializeField] private Image portraitImage;
+    [SerializeField] private GameObject closeButton;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
@@ -16,12 +17,14 @@ public class NPC : MonoBehaviour, IInteractable
 
     void Start()
     {
+        /*
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TMP_Text>();
         nameText = GameObject.Find("NPCNameText").GetComponent<TMP_Text>();
         portraitImage = GameObject.Find("DialoguePortrait").GetComponent<Image>();
-        GameObject.Find("Close").GetComponent<Button>().onClick.AddListener(EndDialogue);
+        GameObject.Find("Close").GetComponent<Button>().onClick.AddListener(EndDialogue);*/
         dialoguePanel.SetActive(false);
+        //closeButton.GetComponent<Button>().onClick.AddListener(EndDialogue);
     }
 
     public bool IsInteractable()
@@ -38,7 +41,9 @@ public class NPC : MonoBehaviour, IInteractable
         if (isDialogueActive)
         { NextLine(); }
         else
-        { StartDialogue(); }
+        { 
+            StartDialogue();
+        }
     }
 
 
@@ -46,8 +51,8 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
-
-        nameText.SetText(dialogueData.name);
+        
+        nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcImage;
 
         dialoguePanel.SetActive(true);
@@ -66,7 +71,10 @@ public class NPC : MonoBehaviour, IInteractable
         }
         else if (++dialogueIndex < dialogueData.dialogue.Length)
         { StartCoroutine(TypeLine()); }
-        else { EndDialogue(); }
+        else
+        {
+            EndDialogue();
+        }
     }
 
     IEnumerator TypeLine()

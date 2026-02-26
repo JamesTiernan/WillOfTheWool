@@ -35,6 +35,11 @@ public class InteractionDetect : MonoBehaviour
     {
         if (collision.TryGetComponent(out IInteractable interactable) && interactable == InteractableInRange)
         {
+            NPC npc = collision.GetComponent<NPC>();
+            if(npc != null)
+            {
+                npc.EndDialogue();
+            }
             InteractableInRange = null;
             InteractIcon.SetActive(false);
         }
