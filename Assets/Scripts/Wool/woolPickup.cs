@@ -10,7 +10,13 @@ public class woolPickup : MonoBehaviour
     {
         canPickup = false;
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = new Vector2(Random.Range(-4f,4f),Random.Range(1.3f,5f));
+        if(Random.Range(0,6) > 3)
+        {
+            rb.linearVelocityX = Random.Range(-3f,-5f);
+        }
+        else{rb.linearVelocityX = Random.Range(3f,5f);}
+        
+        rb.linearVelocityY = Random.Range(1.3f,5f);
         Invoke(nameof(PickupCooldown),0.5f);
     }
 

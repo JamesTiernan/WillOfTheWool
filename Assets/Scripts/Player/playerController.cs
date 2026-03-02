@@ -2,6 +2,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class playerController : MonoBehaviour
 {
@@ -125,8 +126,11 @@ public class playerController : MonoBehaviour
         }
         else{rb.linearVelocityX = -5f;}
         rb.linearVelocityY = 4f;
+        
+        playerSprite.color = new Color(241,140,140);
         Invoke(nameof(KnockbackCooldown),0.5f);
     }
+
 
     private void KnockbackCooldown()
     {
@@ -141,7 +145,7 @@ public class playerController : MonoBehaviour
         heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
 
-        // ----- NEED TO DO RIGHT WOOL ------
+        // ----- NEED TO CHANGE TO RIGHT WOOL ------
         healthManager.Damage(1,false);
 
         /*

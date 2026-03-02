@@ -5,7 +5,9 @@ using Microsoft.Unity.VisualStudio.Editor;
 using System.Data;
 public class itemWheelButtonController : MonoBehaviour
 {
+    [SerializeField] woolInventoryManager woolInventory;
     public int ID;
+    private int amount;
     private Animator anim;
     public string itemName;
     public TextMeshProUGUI itemText;
@@ -23,11 +25,20 @@ public class itemWheelButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        amount = 0;
+        for(int i = 0;i<woolInventory.woolHeld.Length;i++)
+        {
+            if(woolInventory.woolHeld[i].name == itemName)
+            {
+                amount += 1;
+            }
+        }
+        
         isOpen = GetComponentInParent<itemWheelController>();
         if (selected)
         {
             selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
-            itemText.text = itemName;
+            itemText.text = $"{itemName} --- {amount}";
         }
     }
 

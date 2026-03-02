@@ -281,6 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 0
   itemName: Basic Wool
   itemText: {fileID: 222738480}
@@ -1002,7 +1003,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b13884e2b3b714481c7ef4f9b57b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1447,7 +1448,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b13884e2b3b714481c7ef4f9b57b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1770,7 +1771,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b13884e2b3b714481c7ef4f9b57b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2517,7 +2518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2b13884e2b3b714481c7ef4f9b57b8c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2723,7 +2724,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5d4827e8eb517f44a6f88ee80bbbcab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -3134,6 +3135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 4
   itemName: Sticky Wool
   itemText: {fileID: 222738480}
@@ -3588,6 +3590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 2
   itemName: Fire Wool
   itemText: {fileID: 222738480}
@@ -3941,6 +3944,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 1
   itemName: Basic Wool
   itemText: {fileID: 222738480}
@@ -4258,6 +4262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 0
   itemName: Basic Wool
   itemText: {fileID: 222738480}
@@ -4503,6 +4508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 0
   itemName: Basic Wool
   itemText: {fileID: 222738480}
@@ -4743,6 +4749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 3
   itemName: Magnet Wool
   itemText: {fileID: 222738480}
@@ -5288,6 +5295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eed2725ddc03f147a9e52e6d7498ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  woolInventory: {fileID: 8975845735709631614}
   ID: 0
   itemName: Basic Wool
   itemText: {fileID: 222738480}
@@ -6830,21 +6838,7 @@ MonoBehaviour:
   health: {fileID: 8975845735709631613}
   emptySprite: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
   woolSprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
-  woolVisuals:
-  - {fileID: 1103748407}
-  - {fileID: 788309959}
-  - {fileID: 1484191114}
-  - {fileID: 479531001}
-  - {fileID: 1528976965}
-  - {fileID: 1564490743}
-  - {fileID: 920933613}
-  - {fileID: 132209357}
-  - {fileID: 191191034}
-  - {fileID: 1439497083}
-  - {fileID: 1086319038}
-  - {fileID: 322316154}
-  - {fileID: 2061045852}
-  - {fileID: 405482876}
+  woolHeld: []
 --- !u!114 &8975845735709631615
 MonoBehaviour:
   m_ObjectHideFlags: 0

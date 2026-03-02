@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class visualWoolManager : MonoBehaviour
+public class woolInventoryManager : MonoBehaviour
 {
     [SerializeField] healthManager health;
     [SerializeField] Sprite emptySprite;
     [SerializeField] Sprite woolSprite;
-    [SerializeField] GameObject[] woolVisuals;
+    [SerializeField] public GameObject[] woolHeld;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,14 +21,14 @@ public class visualWoolManager : MonoBehaviour
         }
         for(int i =13;i >= 0; i--)
         {
-            if(health.health < 1){woolVisuals[i].GetComponent<SpriteRenderer>().sprite = emptySprite;}
+            if(health.health < 1){woolHeld[i].GetComponent<SpriteRenderer>().sprite = emptySprite;}
             else if(i < health.health)
             {
-                woolVisuals[i].GetComponent<SpriteRenderer>().sprite = woolSprite;
+                woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolSprite;
             }
             else
             {
-                woolVisuals[i].GetComponent<SpriteRenderer>().sprite = emptySprite;
+                woolHeld[i].GetComponent<SpriteRenderer>().sprite = emptySprite;
             }
         }
     }
