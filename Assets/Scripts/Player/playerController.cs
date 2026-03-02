@@ -26,8 +26,10 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject woolPrefab;
     [SerializeField] GameObject heldWool;
     [SerializeField] Sprite noWool;
+    getStuck stuck;
     Vector2 mouseWorldPosition;
     Vector2 mouseRelativePosition;
+    private healthManager healthManager;
 
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -35,10 +37,12 @@ public class playerController : MonoBehaviour
     void Start()
     {
       DontDestroyOnLoad(gameObject);
+      healthManager = GetComponent<healthManager>();
       mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
       rb = GetComponent<Rigidbody2D>();
       playerSprite = GetComponent<SpriteRenderer>();
       animator = GetComponent<Animator>();
+      stuck = GetComponent<getStuck>();
       heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
     }
 
@@ -63,7 +67,9 @@ public class playerController : MonoBehaviour
         }
         else{animator.SetBool("onGround?",false);}
         animator.SetFloat("yVelocity",rb.linearVelocityY);
+
         rb.linearVelocityX = horizontal * speed;
+        if(stuck.isStuck){rb.linearVelocityX *= .4f;}
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -79,7 +85,7 @@ public class playerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if(context.performed && IsGrounded())
+        if(context.performed && IsGrounded() || stuck.isStuck)
         {
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
@@ -99,6 +105,9 @@ public class playerController : MonoBehaviour
         newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
         heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
+
+        // ----- NEED TO DO RIGHT WOOL ------
+        healthManager.Damage(1,false);
 
         /*
         if(mouseWorldPosition.x - gameObject.transform.position.x > 0)
