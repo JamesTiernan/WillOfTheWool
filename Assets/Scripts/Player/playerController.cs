@@ -30,7 +30,9 @@ public class playerController : MonoBehaviour
     Vector2 mouseWorldPosition;
     Vector2 mouseRelativePosition;
     private healthManager healthManager;
-
+    private bool flipped = false;
+    bool stunned;
+    bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -68,23 +70,39 @@ public class playerController : MonoBehaviour
         else{animator.SetBool("onGround?",false);}
         animator.SetFloat("yVelocity",rb.linearVelocityY);
 
-        rb.linearVelocityX = horizontal * speed;
+        if(IsGrounded())
+        {
+            rb.linearVelocityX *= 0.4f;
+        }
+        else
+        {
+            rb.linearVelocityX *= 0.95f;
+        }
+        
+        if(!stunned && moving)
+        {
+            rb.linearVelocityX = horizontal * speed;
+        }
         if(stuck.isStuck){rb.linearVelocityX *= .4f;}
     }
 
     public void Move(InputAction.CallbackContext context)
     {
+        if(stunned){horizontal = 0;return;}
         horizontal = context.ReadValue<Vector2>().x;
+        if(horizontal != 0){moving = true;}else{moving = false;}
         if(horizontal > 0 && horizontal != 0)
         {
+            flipped = false;
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);}}
+        else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);flipped = true;}}
         animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
+        if(stunned){return;}
         if(context.performed && IsGrounded() || stuck.isStuck)
         {
             animator.SetBool("isJumping",true);
@@ -96,6 +114,23 @@ public class playerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer);
+    }
+
+    public void HitKnockback()
+    {
+        stunned = true;
+        if(flipped)
+        {
+            rb.linearVelocityX = 5f;
+        }
+        else{rb.linearVelocityX = -5f;}
+        rb.linearVelocityY = 4f;
+        Invoke(nameof(KnockbackCooldown),0.5f);
+    }
+
+    private void KnockbackCooldown()
+    {
+        stunned = false;
     }
 
     public void throwWool()
@@ -119,6 +154,7 @@ public class playerController : MonoBehaviour
     }
     public void throwAnimationPlay()
     {
+        if(stunned){return;}
         if(itemWheelGUI.itemWheelSelected == true){return;}
         if(heldWool.GetComponent<SpriteRenderer>().sprite == noWool){return;}
         animator.Play("playerThrowWool");
