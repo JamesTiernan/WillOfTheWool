@@ -21,18 +21,19 @@ public class healthManager : MonoBehaviour
     {
         for(int i = 0; i<amount; i++)
         {
-            if(drop)
+            if(drop && health >=1)
             {
                 GameObject newObj = Instantiate(damageEffect);
                 newObj.transform.position = transform.position;
             }
+            health -= 1;
+            if(health < 0){health =0; Debug.Log("u dead");}
+        }
             /*
             newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
             visual wool must match wool and also update this too :)
             */
-        }
-        health -= amount;
-        if(health < 0){health =0; Debug.Log("u dead");}
+        
     }
 
     public void Heal(int amount)
