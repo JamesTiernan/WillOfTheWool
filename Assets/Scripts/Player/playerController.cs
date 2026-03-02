@@ -31,7 +31,7 @@ public class playerController : MonoBehaviour
     Vector2 mouseWorldPosition;
     Vector2 mouseRelativePosition;
     private healthManager healthManager;
-    private bool flipped = false;
+    public bool flipped = false;
     bool stunned;
     bool moving;
     private float horizontal;
@@ -139,14 +139,13 @@ public class playerController : MonoBehaviour
 
     public void throwWool()
     {
+        Sprite mySprite = heldWool.GetComponent<SpriteRenderer>().sprite;
+        GetComponent<woolInventoryManager>().LoseWool(mySprite);
         GameObject newObj = Instantiate(woolPrefab);
         newObj.transform.position = heldWool.transform.position;
         newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
         heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
-
-        // ----- NEED TO CHANGE TO RIGHT WOOL ------
-        healthManager.Damage(1,false);
 
         /*
         if(mouseWorldPosition.x - gameObject.transform.position.x > 0)

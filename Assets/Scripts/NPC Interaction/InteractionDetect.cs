@@ -13,6 +13,14 @@ public class InteractionDetect : MonoBehaviour
         InteractIcon.SetActive(false);
     }
 
+    void Update()
+    {
+        if(GetComponentInParent<playerController>().flipped)
+        {
+            InteractIcon.transform.localScale = new Vector2(-1.4f,1.4f);
+        }else{InteractIcon.transform.localScale = new Vector2(1.4f,1.4f);}
+    }
+
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.performed)

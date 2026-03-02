@@ -32,7 +32,8 @@ public class woolPickup : MonoBehaviour
         Debug.Log(other);
         if(other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<healthManager>().Heal(value);
+            Sprite mySprite = GetComponent<SpriteRenderer>().sprite;
+            other.gameObject.GetComponent<healthManager>().Heal(value, mySprite);
             //other.GetComponent<visualWoolManager>();
             Destroy(gameObject);
         }

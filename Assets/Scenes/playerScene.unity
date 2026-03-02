@@ -286,7 +286,7 @@ MonoBehaviour:
   itemName: Basic Wool
   itemText: {fileID: 222738480}
   selectedItem: {fileID: 1526360662}
-  icon: {fileID: -5245570538613121200, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  icon: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!95 &29753946
 Animator:
   serializedVersion: 7
@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 132209358}
   - component: {fileID: 132209359}
   m_Layer: 0
-  m_Name: basicWool (7)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -520,7 +520,7 @@ GameObject:
   - component: {fileID: 191191035}
   - component: {fileID: 191191036}
   m_Layer: 0
-  m_Name: basicWool (9)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -832,7 +832,7 @@ Transform:
   m_GameObject: {fileID: 302865386}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.012887418, w: 0.999917}
-  m_LocalPosition: {x: 0.073877685, y: 0.0026400164, z: 0}
+  m_LocalPosition: {x: 0.049, y: -0.026, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -847,8 +847,8 @@ Transform:
   - {fileID: 322316155}
   - {fileID: 191191035}
   - {fileID: 1564490744}
-  - {fileID: 1086319039}
   - {fileID: 920933614}
+  - {fileID: 1086319039}
   - {fileID: 405482877}
   m_Father: {fileID: 654169110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -938,7 +938,7 @@ GameObject:
   - component: {fileID: 322316155}
   - component: {fileID: 322316156}
   m_Layer: 0
-  m_Name: basicWool (8)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -954,7 +954,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.17351672, w: -0.984831}
   m_LocalPosition: {x: 0.51599985, y: -0.20599985, z: 0}
-  m_LocalScale: {x: 0.7000001, y: 0.7000001, z: 0.7}
+  m_LocalScale: {x: 0.7000001, y: 0.70000005, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 302865387}
@@ -1025,7 +1025,7 @@ GameObject:
   - component: {fileID: 405482877}
   - component: {fileID: 405482878}
   m_Layer: 0
-  m_Name: basicWool (13)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1112,7 @@ GameObject:
   - component: {fileID: 479531002}
   - component: {fileID: 479531003}
   m_Layer: 0
-  m_Name: basicWool (2)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1177,7 +1177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 558bd8bcfd764814b9a162f2b4f813f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1296,7 +1296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625891023}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7910648, w: 0.61173236}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7910647, w: 0.61173254}
   m_LocalPosition: {x: 0.21977884, y: 0.23910096, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1364,7 +1364,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780510315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9444965, w: 0.32852155}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9444965, w: 0.32852146}
   m_LocalPosition: {x: 0.18284714, y: -0.2015309, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1383,7 +1383,7 @@ GameObject:
   - component: {fileID: 788309960}
   - component: {fileID: 788309961}
   m_Layer: 0
-  m_Name: basicWool (1)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1398,7 +1398,7 @@ Transform:
   m_GameObject: {fileID: 788309959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.92702425, w: -0.3750016}
-  m_LocalPosition: {x: 0.076999955, y: -0.18399999, z: 0}
+  m_LocalPosition: {x: 0.2034, y: -0.0757, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1589,7 +1589,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863717090}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.98059064, w: 0.19606633}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9805907, w: 0.19606611}
   m_LocalPosition: {x: 0.044615228, y: -0.21228749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1656,7 +1656,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 895737086}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.18713261, w: -0.98233473}
+  m_LocalRotation: {x: -0, y: -0, z: -0.18713287, w: -0.9823346}
   m_LocalPosition: {x: 0.3, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1687,7 +1687,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907099449}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.41942853, w: 0.90778846}
+  m_LocalRotation: {x: 0, y: 0, z: 0.4194287, w: 0.90778834}
   m_LocalPosition: {x: 0.4045256, y: -0.013966411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1706,7 +1706,7 @@ GameObject:
   - component: {fileID: 920933614}
   - component: {fileID: 920933615}
   m_Layer: 0
-  m_Name: basicWool (11)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1906,7 +1906,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003354158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.33507547, w: 0.9421913}
+  m_LocalRotation: {x: 0, y: 0, z: -0.33507532, w: 0.94219136}
   m_LocalPosition: {x: 0.2866374, y: 0.008919302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1939,7 +1939,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1012173571}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.99998, w: 0.0063268817}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99998, w: 0.0063273474}
   m_LocalPosition: {x: 0.0704606, y: 0.118071504, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1972,7 +1972,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079992482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.6300523, w: 0.77655274}
+  m_LocalRotation: {x: 0, y: 0, z: 0.63005275, w: 0.77655244}
   m_LocalPosition: {x: 0.3902337, y: 0.0015203059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1991,7 +1991,7 @@ GameObject:
   - component: {fileID: 1086319039}
   - component: {fileID: 1086319040}
   m_Layer: 0
-  m_Name: basicWool (12)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2006,7 +2006,7 @@ Transform:
   m_GameObject: {fileID: 1086319038}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.74049556, w: -0.6720613}
-  m_LocalPosition: {x: 0.21899998, y: -0.11099993, z: 0}
+  m_LocalPosition: {x: 0.0574, y: -0.2032, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2056,7 +2056,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 558bd8bcfd764814b9a162f2b4f813f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2078,7 +2078,7 @@ GameObject:
   - component: {fileID: 1103748408}
   - component: {fileID: 1103748409}
   m_Layer: 0
-  m_Name: basicWool
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2094,7 +2094,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.97289765, w: 0.23123649}
   m_LocalPosition: {x: 0.048000056, y: 0.17200007, z: 0}
-  m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 0.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 302865387}
@@ -2253,7 +2253,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1433508633}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.34934384, w: 0.9369947}
+  m_LocalRotation: {x: 0, y: 0, z: -0.34934366, w: 0.93699473}
   m_LocalPosition: {x: 0.31800035, y: 0.02775199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2273,7 +2273,7 @@ GameObject:
   - component: {fileID: 1439497084}
   - component: {fileID: 1439497085}
   m_Layer: 0
-  m_Name: basicWool (3)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2289,7 +2289,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.6302844, w: -0.7763644}
   m_LocalPosition: {x: 0.18899997, y: -0.19099979, z: 0}
-  m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 0.7}
+  m_LocalScale: {x: 0.70000005, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 302865387}
@@ -2338,7 +2338,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 558bd8bcfd764814b9a162f2b4f813f2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2435,7 +2435,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461842067}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.109726354, w: 0.9939618}
+  m_LocalRotation: {x: -0, y: -0, z: 0.109726444, w: 0.9939618}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2453,7 +2453,7 @@ GameObject:
   - component: {fileID: 1484191115}
   - component: {fileID: 1484191116}
   m_Layer: 0
-  m_Name: basicWool (4)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,7 +2659,7 @@ GameObject:
   - component: {fileID: 1528976966}
   - component: {fileID: 1528976967}
   m_Layer: 0
-  m_Name: basicWool (6)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2821,7 +2821,7 @@ GameObject:
   - component: {fileID: 1564490744}
   - component: {fileID: 1564490745}
   m_Layer: 0
-  m_Name: basicWool (10)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2921,7 +2921,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585171926}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.25414416, w: 0.9671663}
+  m_LocalRotation: {x: -0, y: -0, z: 0.25414386, w: 0.9671665}
   m_LocalPosition: {x: 0.4, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3302,9 +3302,9 @@ Transform:
   m_GameObject: {fileID: 1749148332}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 2.05, z: 0}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1.4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 536515385}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3352,12 +3352,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 18960d0646826fe45a767f48206afd1b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8352941}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.82, y: 0.79}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -4124,7 +4124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868683935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.36507303, w: -0.93097895}
+  m_LocalRotation: {x: -0, y: -0, z: 0.3650731, w: -0.93097883}
   m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4267,7 +4267,7 @@ MonoBehaviour:
   itemName: Basic Wool
   itemText: {fileID: 222738480}
   selectedItem: {fileID: 1526360662}
-  icon: {fileID: -5245570538613121200, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  icon: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!95 &1902178006
 Animator:
   serializedVersion: 7
@@ -4513,7 +4513,7 @@ MonoBehaviour:
   itemName: Basic Wool
   itemText: {fileID: 222738480}
   selectedItem: {fileID: 1526360662}
-  icon: {fileID: -5245570538613121200, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  icon: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!95 &1955385329
 Animator:
   serializedVersion: 7
@@ -5030,7 +5030,7 @@ Transform:
   m_GameObject: {fileID: 2009031152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 2.9099998, z: -10}
+  m_LocalPosition: {x: 3.91, y: 2.3400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5300,7 +5300,7 @@ MonoBehaviour:
   itemName: Basic Wool
   itemText: {fileID: 222738480}
   selectedItem: {fileID: 1526360662}
-  icon: {fileID: -5245570538613121200, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
+  icon: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
 --- !u!95 &2054019645
 Animator:
   serializedVersion: 7
@@ -5416,7 +5416,7 @@ GameObject:
   - component: {fileID: 2061045853}
   - component: {fileID: 2061045854}
   m_Layer: 0
-  m_Name: basicWool (5)
+  m_Name: woolSlot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5432,7 +5432,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.49138105, w: -0.87094474}
   m_LocalPosition: {x: 0.5202, y: 0.2373, z: 0}
-  m_LocalScale: {x: 0.70000005, y: 0.70000005, z: 0.7}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 302865387}
@@ -5740,7 +5740,7 @@ Transform:
   m_GameObject: {fileID: 6008685832909004661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 2.9099998, z: -10}
+  m_LocalPosition: {x: 3.91, y: 2.3400002, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5859,7 +5859,7 @@ Transform:
   m_GameObject: {fileID: 8811432891456453018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.82, y: 2.01, z: 0}
+  m_LocalPosition: {x: 3.91, y: 1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6157,6 +6157,7 @@ MonoBehaviour:
   woolPrefab: {fileID: 751572364290207952, guid: 05010aacc43dc77448430fdb4da9a8ed, type: 3}
   heldWool: {fileID: 1526360662}
   noWool: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
+  flipped: 0
 --- !u!1001 &5540209109786441904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6838,7 +6839,21 @@ MonoBehaviour:
   health: {fileID: 8975845735709631613}
   emptySprite: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
   woolSprite: {fileID: 21300000, guid: efdcb6a1da8248045847269ab491b3fa, type: 3}
-  woolHeld: []
+  woolHeld:
+  - {fileID: 1103748407}
+  - {fileID: 788309959}
+  - {fileID: 479531001}
+  - {fileID: 1439497083}
+  - {fileID: 1484191114}
+  - {fileID: 2061045852}
+  - {fileID: 1528976965}
+  - {fileID: 132209357}
+  - {fileID: 322316154}
+  - {fileID: 191191034}
+  - {fileID: 1564490743}
+  - {fileID: 920933613}
+  - {fileID: 1086319038}
+  - {fileID: 405482876}
 --- !u!114 &8975845735709631615
 MonoBehaviour:
   m_ObjectHideFlags: 0

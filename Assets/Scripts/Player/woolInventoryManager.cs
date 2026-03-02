@@ -19,17 +19,61 @@ public class woolInventoryManager : MonoBehaviour
         {
             Debug.Log("GAME OVER");
         }
+        /*
         for(int i =13;i >= 0; i--)
         {
             if(health.health < 1){woolHeld[i].GetComponent<SpriteRenderer>().sprite = emptySprite;}
             else if(i < health.health)
             {
-                woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolSprite;
+                woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
             }
             else
             {
-                woolHeld[i].GetComponent<SpriteRenderer>().sprite = emptySprite;
+                woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
+            }
+        }*/
+    }
+
+    public bool LoseWool(Sprite woolType)
+    {
+        // Check for wool in inventory, set as disabled and return once found.
+        for(int i =13;i>=0;i--)
+        {
+            if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
+            {
+                woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
+                return true;
             }
         }
+        return false;
     }
+
+    public bool GainWool(Sprite woolType)
+    {
+        // Check if wool already in inventory and disabled, enable it if so. Otherwise replace disabled wool with new.
+        for(int i =13;i>=0;i--)
+        {
+            if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == false)
+            {
+                woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                return true;
+            }
+            
+        }
+        // Attempt to replace a disabled wool with the new.
+        for(int i =13;i>=0;i--)
+        {
+            if(woolHeld[i].GetComponent<SpriteRenderer>().enabled == false)
+            {
+                woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolType; 
+                woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                return true;
+            }
+            
+        }
+
+        // Return false if neither are valid options.
+        return false;
+    }
+
 }

@@ -3,6 +3,7 @@ using UnityEditor.UI;
 using TMPro;
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Data;
+using UnityEngine.UI;
 public class itemWheelButtonController : MonoBehaviour
 {
     [SerializeField] woolInventoryManager woolInventory;
@@ -28,12 +29,12 @@ public class itemWheelButtonController : MonoBehaviour
         amount = 0;
         for(int i = 0;i<woolInventory.woolHeld.Length;i++)
         {
-            if(woolInventory.woolHeld[i].name == itemName)
+            if(woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == icon.name && woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
             {
                 amount += 1;
             }
         }
-        
+        if(amount <=0){GetComponent<Button>().interactable = false;return;}else{GetComponent<Button>().interactable = true;}
         isOpen = GetComponentInParent<itemWheelController>();
         if (selected)
         {
