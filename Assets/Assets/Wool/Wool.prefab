@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 4856602937109481134}
   - component: {fileID: 3128802435193674417}
   - component: {fileID: 3024189514825811248}
+  - component: {fileID: -5262217048613193768}
   - component: {fileID: 3662432299674262332}
   - component: {fileID: 4986531830661638932}
   - component: {fileID: 3223162891043879517}
   - component: {fileID: 4717725607166227646}
   - component: {fileID: -8612319895566541369}
   - component: {fileID: 8618077362738426657}
+  - component: {fileID: -3751390148400349645}
   m_Layer: 7
   m_Name: Wool
   m_TagString: Untagged
@@ -121,6 +123,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &-5262217048613193768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751572364290207952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb4b8425a3ff0594b84a5930b8c2cef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stickyLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  stickyMultiplier: {x: 0.8, y: 0.8}
+  isStuck: 0
 --- !u!58 &3662432299674262332
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -221,3 +240,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9a80efe1b605047a2dc9d3cd7e313f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3751390148400349645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751572364290207952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3899f0401e8038543b1541fb91c8a5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layer:
+    serializedVersion: 2
+    m_Bits: 256
