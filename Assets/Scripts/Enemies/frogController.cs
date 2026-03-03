@@ -31,17 +31,6 @@ public class frogController : MonoBehaviour
         }
     }
 
-    /*public void Damage()
-    {
-        Collider2D other = Physics2D.OverlapCircle(attackPoint.position,5,playerLayer);
-        if(other != null)
-        {
-            other.GetComponent<healthManager>().Damage(3,true);
-            playerController checkPlayer = other.GetComponent<playerController>();
-            if(checkPlayer != null){other.GetComponent<playerController>().HitKnockback();}
-        }
-    }*/
-
     void Hop()
     {
         animator.SetTrigger("Hop");
@@ -52,7 +41,10 @@ public class frogController : MonoBehaviour
     {
         canMove = true;
         animator.Play("Idle",animator.GetLayerIndex("Base Layer"));
-        transform.position = new Vector2(transform.position.x + 6,transform.position.y);
+        int moveDist;
+        Debug.Log($"My Rotation: {transform.localEulerAngles.y}");
+        if(transform.localEulerAngles.y == 180){moveDist = -6;}else{moveDist = 6;}
+        transform.position = new Vector2(transform.position.x + moveDist,transform.position.y);
         playerDetectMovement.enabled = true;
     }
 }
