@@ -12,22 +12,25 @@ public class woolHoover : MonoBehaviour
 
     void FixedUpdate()
     {
-        Collider2D otherCollider = Physics2D.OverlapCircle(gameObject.transform.position,2,playerLayer);
-        if(otherCollider != null)
+        if(GetComponentInParent<woolPickup>().canPickup == false)
         {
-            other = otherCollider.gameObject;
-            if(other != null)
+            Collider2D otherCollider = Physics2D.OverlapCircle(gameObject.transform.position,2,playerLayer);
+            if(otherCollider != null)
             {
-                if(!GetComponentInParent<woolPickup>().canPickup){return;}
-                Debug.Log(other);
-                if(other.gameObject.CompareTag("Player"))
+                other = otherCollider.gameObject;
+                if(other != null)
                 {
-                    Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-                    Vector2 force = (Vector2)other.gameObject.transform.position - (Vector2)gameObject.transform.position;
-                    Vector2 totalForce = force.normalized * 2;
-                    rb.linearVelocity = totalForce;
+                    if(!GetComponentInParent<woolPickup>().canPickup){return;}
+                    Debug.Log(other);
+                    if(other.gameObject.CompareTag("Player"))
+                    {
+                        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+                        Vector2 force = (Vector2)other.gameObject.transform.position - (Vector2)gameObject.transform.position;
+                        Vector2 totalForce = force.normalized * 2;
+                        rb.linearVelocity = totalForce;
+                    }
+                    else{return;}
                 }
-                else{return;}
             }
         }
         
