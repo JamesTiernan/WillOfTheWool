@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1990965991888330521}
   - component: {fileID: 7251731573302199143}
   - component: {fileID: -496350380960718519}
+  - component: {fileID: 3884916720862485625}
   m_Layer: 0
   m_Name: Fire
   m_TagString: Fire
@@ -103,3 +104,20 @@ MonoBehaviour:
   time: 3
   basicWool: {fileID: 8164450900695082596, guid: ad8d1742e2febed418493f3683127931, type: 3}
   droppedSprite: {fileID: 21300000, guid: a2b13884e2b3b714481c7ef4f9b57b8c, type: 3}
+--- !u!114 &3884916720862485625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906032692292807521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb11f8a02917cc543a556156deaa68b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  amount: 1
+  entityDamageLayer:
+    serializedVersion: 2
+    m_Bits: 1024

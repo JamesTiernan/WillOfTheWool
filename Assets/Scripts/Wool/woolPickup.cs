@@ -29,7 +29,7 @@ public class woolPickup : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D other)
     {
         if(!canPickup){return;}
-        Debug.Log(other);
+        //Debug.Log(other);
         if(other.gameObject.CompareTag("Player"))
         {
             Sprite mySprite = GetComponent<SpriteRenderer>().sprite;

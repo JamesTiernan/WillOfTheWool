@@ -71,20 +71,23 @@ public class playerController : MonoBehaviour
         else{animator.SetBool("onGround?",false);}
         animator.SetFloat("yVelocity",rb.linearVelocityY);
 
-        if(IsGrounded())
+        if(!stunned)
         {
-            rb.linearVelocityX *= 0.4f;
+            if(IsGrounded())
+            {
+                rb.linearVelocityX *= 0.4f;
+            }
+            else
+            {
+                rb.linearVelocityX *= 0.6f;
+            }
+            
+            if(moving)
+            {
+                rb.linearVelocityX = horizontal * speed;
+            }
+            if(stuck.isStuck){rb.linearVelocityX *= .4f;}
         }
-        else
-        {
-            rb.linearVelocityX *= 0.6f;
-        }
-        
-        if(!stunned && moving)
-        {
-            rb.linearVelocityX = horizontal * speed;
-        }
-        if(stuck.isStuck){rb.linearVelocityX *= .4f;}
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -145,16 +148,9 @@ public class playerController : MonoBehaviour
         newObj.transform.position = heldWool.transform.position;
         newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
         heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
-        newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
-
-        /*
-        if(mouseWorldPosition.x - gameObject.transform.position.x > 0)
-        {
-            newObj.GetComponent<Rigidbody2D>().linearVelocityX =  20;
-        }
-        else{newObj.GetComponent<Rigidbody2D>().linearVelocityX = -20;}*/
-        
+        newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10; 
     }
+
     public void throwAnimationPlay()
     {
         if(stunned){return;}
