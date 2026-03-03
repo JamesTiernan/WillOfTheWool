@@ -53,7 +53,7 @@ public class EnemySideways : MonoBehaviour
         if (!IsSwooping && !IsReturning)
         {
             player = PlayerTransform;
-            target = new Vector3(player.position.x, player.position.y, player.position.z);
+            //target = new Vector3(player, , speed * Time.deltaTime);
             IsSwooping = true;
         }
 
