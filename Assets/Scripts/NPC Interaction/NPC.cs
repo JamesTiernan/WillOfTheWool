@@ -9,7 +9,6 @@ public class NPC : MonoBehaviour, IInteractable
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText, nameText;
     [SerializeField] private Image portraitImage;
-    [SerializeField] private GameObject closeButton;
 
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;

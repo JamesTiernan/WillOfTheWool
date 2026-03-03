@@ -2,6 +2,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class playerController : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class playerController : MonoBehaviour
     Vector2 mouseWorldPosition;
     Vector2 mouseRelativePosition;
     private healthManager healthManager;
-    private bool flipped = false;
+    public bool flipped = false;
     bool stunned;
     bool moving;
     private float horizontal;
@@ -76,7 +77,7 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            rb.linearVelocityX *= 0.95f;
+            rb.linearVelocityX *= 0.6f;
         }
         
         if(!stunned && moving)
@@ -125,8 +126,11 @@ public class playerController : MonoBehaviour
         }
         else{rb.linearVelocityX = -5f;}
         rb.linearVelocityY = 4f;
+        
+        playerSprite.color = new Color(241,140,140);
         Invoke(nameof(KnockbackCooldown),0.5f);
     }
+
 
     private void KnockbackCooldown()
     {
@@ -135,14 +139,13 @@ public class playerController : MonoBehaviour
 
     public void throwWool()
     {
+        Sprite mySprite = heldWool.GetComponent<SpriteRenderer>().sprite;
+        GetComponent<woolInventoryManager>().LoseWool(mySprite);
         GameObject newObj = Instantiate(woolPrefab);
         newObj.transform.position = heldWool.transform.position;
         newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
         heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
-
-        // ----- NEED TO DO RIGHT WOOL ------
-        healthManager.Damage(1,false);
 
         /*
         if(mouseWorldPosition.x - gameObject.transform.position.x > 0)

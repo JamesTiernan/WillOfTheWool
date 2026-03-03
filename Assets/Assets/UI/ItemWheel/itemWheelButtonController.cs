@@ -3,9 +3,12 @@ using UnityEditor.UI;
 using TMPro;
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Data;
+using UnityEngine.UI;
 public class itemWheelButtonController : MonoBehaviour
 {
+    [SerializeField] woolInventoryManager woolInventory;
     public int ID;
+    private int amount;
     private Animator anim;
     public string itemName;
     public TextMeshProUGUI itemText;
@@ -23,11 +26,20 @@ public class itemWheelButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        amount = 0;
+        for(int i = 0;i<woolInventory.woolHeld.Length;i++)
+        {
+            if(woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == icon.name && woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
+            {
+                amount += 1;
+            }
+        }
+        if(amount <=0){GetComponent<Button>().interactable = false;return;}else{GetComponent<Button>().interactable = true;}
         isOpen = GetComponentInParent<itemWheelController>();
         if (selected)
         {
             selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
-            itemText.text = itemName;
+            itemText.text = $"{itemName} --- {amount}";
         }
     }
 

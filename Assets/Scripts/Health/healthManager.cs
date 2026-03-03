@@ -19,14 +19,27 @@ public class healthManager : MonoBehaviour
 
     public void Damage(int amount ,bool drop)
     {
+        Sprite newSprite = null;
         for(int i = 0; i<amount; i++)
         {
+            for(int j =13;j>=0;j--)
+            {
+                if(GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().enabled == true)
+                {
+                    GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().enabled = false;
+                    newSprite = GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().sprite;
+                    health -= 1;
+                    j = -1;
+                }
+            }
             if(drop && health >=1)
             {
                 GameObject newObj = Instantiate(damageEffect);
                 newObj.transform.position = transform.position;
+                newObj.GetComponent<SpriteRenderer>().sprite = newSprite;
             }
-            health -= 1;
+            
+            
             if(health < 0){health =0; Debug.Log("u dead");}
         }
             /*
@@ -36,8 +49,9 @@ public class healthManager : MonoBehaviour
         
     }
 
-    public void Heal(int amount)
+    public void Heal(int amount,Sprite woolType)
     {
+        if(GetComponent<woolInventoryManager>().GainWool(woolType) == false){return;}
         health += amount;
         if(health > maxHealth)
         {
