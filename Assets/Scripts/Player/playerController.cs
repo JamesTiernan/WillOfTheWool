@@ -77,7 +77,7 @@ public class playerController : MonoBehaviour
         }
         else
         {
-            rb.linearVelocityX *= 0.95f;
+            rb.linearVelocityX *= 0.6f;
         }
         
         if(!stunned && moving)

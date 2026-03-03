@@ -2,16 +2,19 @@ using UnityEngine;
 
 public class despawnPlatform : MonoBehaviour
 {
+    [SerializeField] float time;
     [SerializeField] GameObject basicWool;
+    [SerializeField] Sprite droppedSprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Invoke(nameof(Despawn),5f);
+        Invoke(nameof(Despawn),time);
     }
 
     private void Despawn()
     {
         GameObject newObj = Instantiate(basicWool);
+        newObj.GetComponent<SpriteRenderer>().sprite = droppedSprite;
         newObj.transform.position = transform.position;
         Destroy(gameObject);
     }

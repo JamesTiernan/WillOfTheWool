@@ -24,11 +24,12 @@ public class healthManager : MonoBehaviour
         {
             for(int j =13;j>=0;j--)
             {
-                if(GetComponent<woolInventoryManager>().woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
+                if(GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().enabled == true)
                 {
-                    GetComponent<woolInventoryManager>().woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
-                    newSprite = GetComponent<woolInventoryManager>().woolHeld[i].GetComponent<SpriteRenderer>().sprite;
+                    GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().enabled = false;
+                    newSprite = GetComponent<woolInventoryManager>().woolHeld[j].GetComponent<SpriteRenderer>().sprite;
                     health -= 1;
+                    j = -1;
                 }
             }
             if(drop && health >=1)
