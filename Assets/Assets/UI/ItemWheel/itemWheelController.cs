@@ -33,7 +33,7 @@ public class itemWheelController : MonoBehaviour
             anim.SetBool("OpenItemWheel", false);
         }
 
-        selectedWool.GetComponent<SpriteRenderer>().sprite = selectedItem.GetComponent<SpriteRenderer>().sprite;
+        
         selectedWool.GetComponent<UnityEngine.UI.Image>().sprite = selectedItem.GetComponent<SpriteRenderer>().sprite;
         
         /*
