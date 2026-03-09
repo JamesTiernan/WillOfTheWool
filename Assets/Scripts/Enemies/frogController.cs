@@ -7,6 +7,7 @@ public class frogController : MonoBehaviour
     [SerializeField] playerCheck playerDetectAttack;
     [SerializeField] playerCheck playerDetectMovement;
     bool canMove;
+    int hops;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -36,16 +37,32 @@ public class frogController : MonoBehaviour
 
     public void Move()
     {
-        canMove = true;
+        hops += 1;
         animator.Play("Idle",animator.GetLayerIndex("Base Layer"));
-        if(transform.localEulerAngles.y != 180)
-        {
-            transform.position = new Vector2(transform.localPosition.x + 6,transform.position.y);
-        }
-        else
+        Debug.Log($"{transform.localEulerAngles.y} // {hops}");
+        if(transform.localEulerAngles.y == 180)
         {
             transform.position = new Vector2(transform.position.x - 6,transform.position.y);
         }
+        else
+        {
+            transform.position = new Vector2(transform.position.x + 6,transform.position.y);
+        }
         playerDetectMovement.enabled = true;
+        if(hops == 2)
+        {
+            if(transform.localEulerAngles.y == 0)
+            {
+                Debug.Log("FLIP");
+                transform.rotation = Quaternion.Euler(0,180,0);
+            }
+            else if(transform.localEulerAngles.y == 180)
+            {
+                Debug.Log("FLIP");
+                transform.rotation = Quaternion.Euler(0,0,0);
+            }
+            hops = 0;
+        }
+        canMove = true;
     }
 }
