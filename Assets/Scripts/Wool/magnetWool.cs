@@ -8,7 +8,10 @@ public class magnetWool : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Invoke(nameof(Despawn),timer);
+        if(GetComponent<SpriteRenderer>().sprite.name == "magnetWool")
+        {
+            Invoke(nameof(Despawn),timer);
+        }
     }
 
     void Despawn()
@@ -32,7 +35,6 @@ public class magnetWool : MonoBehaviour
 
     public void CheckMagnetic()
     {
-        
         Collider2D other = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 2f,layer);
         if(other != null)
         {

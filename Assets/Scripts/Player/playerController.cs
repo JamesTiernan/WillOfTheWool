@@ -34,6 +34,7 @@ public class playerController : MonoBehaviour
     private healthManager healthManager;
     public bool flipped = false;
     public bool stunned;
+    public bool invincible;
     float jumpTimer;
     float lerpTime = 1f;
     float lerpDuration = 1f;
@@ -58,6 +59,7 @@ public class playerController : MonoBehaviour
         if(stunned)
         {
             lerpTime += Time.deltaTime;
+            
             // Calculate how far along we are in the color transition (from 0 to 1)
             float t = lerpTime / lerpDuration;
 
@@ -158,16 +160,7 @@ public class playerController : MonoBehaviour
     {
         lerpTime = 0f;
         stunned = true;
-        //playerSprite.color = Color.Lerp(playerSprite.color,Color.red,1f);
-        /*
-        if(flipped)
-        {
-            rb.linearVelocityX = 5f;
-        }
-        else{rb.linearVelocityX = -5f;}
-        rb.linearVelocityY = 4f;
-        */
-        //GetComponent<SpriteRenderer>().color = new Color(241,140,140);
+        invincible = true;
         animator.Play("playerDamage");
     }
 
@@ -177,6 +170,12 @@ public class playerController : MonoBehaviour
         lerpTime = 0f;
         //playerSprite.color = Color.Lerp(playerSprite.color,Color.white,1f);
         stunned = false;
+        Invoke(nameof(IFrameOver),2f);
+    }
+
+    private void IFrameOver()
+    {
+        invincible = false;
     }
 
     public void throwWool()
