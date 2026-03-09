@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 
 public class itemWheelController : MonoBehaviour
 {
+    [SerializeField] GameObject selectedWool;
     public Animator anim;
     public bool itemWheelSelected = false;
     public GameObject selectedItem;
@@ -12,25 +13,29 @@ public class itemWheelController : MonoBehaviour
 
     public void Open(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if (context.performed)
         {
             itemWheelSelected = !itemWheelSelected;
         }
 
     }
-    
+
     // Update is called once per frame
     void Update()
     {
 
-        if(itemWheelSelected)
+        if (itemWheelSelected)
         {
-            anim.SetBool("OpenItemWheel",true);
+            anim.SetBool("OpenItemWheel", true);
         }
         else
         {
-            anim.SetBool("OpenItemWheel",false);
+            anim.SetBool("OpenItemWheel", false);
         }
+
+        selectedWool.GetComponent<SpriteRenderer>().sprite = selectedItem.GetComponent<SpriteRenderer>().sprite;
+        selectedWool.GetComponent<UnityEngine.UI.Image>().sprite = selectedItem.GetComponent<SpriteRenderer>().sprite;
+        
         /*
         if(itemWheelSelected)
         {
