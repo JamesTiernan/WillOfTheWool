@@ -19,6 +19,7 @@ public class healthManager : MonoBehaviour
 
     public void Damage(int amount ,bool drop)
     {
+        if(GetComponent<playerController>().stunned){return;}
         Sprite newSprite = null;
         for(int i = 0; i<amount; i++)
         {

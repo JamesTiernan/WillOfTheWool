@@ -3,10 +3,20 @@ using UnityEngine;
 public class magnetWool : MonoBehaviour
 {
     [SerializeField] LayerMask layer;
+    [SerializeField] float timer;
+    [SerializeField] GameObject woolDrop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        Invoke(nameof(Despawn),timer);
+    }
+
+    void Despawn()
+    {
+        GameObject newObj = Instantiate(woolDrop);
+        newObj.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+        newObj.transform.position = transform.position;
+        Destroy(gameObject);
     }
 
     // Update is called once per frame

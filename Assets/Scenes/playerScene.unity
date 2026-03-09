@@ -1447,7 +1447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625891023}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7910646, w: 0.61173266}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7910645, w: 0.6117328}
   m_LocalPosition: {x: 0.21977884, y: 0.23910096, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1515,7 +1515,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780510315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9444967, w: 0.32852095}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9444968, w: 0.32852077}
   m_LocalPosition: {x: 0.18284714, y: -0.2015309, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1838,14 +1838,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907099449}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.41942936, w: 0.90778804}
+  m_LocalRotation: {x: 0, y: 0, z: 0.41942966, w: 0.9077879}
   m_LocalPosition: {x: 0.4045256, y: -0.013966411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1868683936}
   m_Father: {fileID: 780510316}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 48.586}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 60.693}
 --- !u!1 &920933613
 GameObject:
   m_ObjectHideFlags: 0
@@ -2123,7 +2123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1079992482}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.6300531, w: 0.776552}
+  m_LocalRotation: {x: 0, y: 0, z: 0.6300532, w: 0.7765519}
   m_LocalPosition: {x: 0.3902337, y: 0.0015203059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3072,7 +3072,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585171926}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.25414348, w: 0.9671666}
+  m_LocalRotation: {x: -0, y: -0, z: 0.25414348, w: 0.96716654}
   m_LocalPosition: {x: 0.4, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3502,7 +3502,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 18960d0646826fe45a767f48206afd1b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.8352941}
   m_FlipX: 0
@@ -4276,7 +4276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868683935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.3650733, w: -0.9309788}
+  m_LocalRotation: {x: -0, y: -0, z: 0.3650734, w: -0.93097883}
   m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5182,7 +5182,7 @@ Transform:
   m_GameObject: {fileID: 2009031152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.51, y: 2.9899998, z: -10}
+  m_LocalPosition: {x: 7.51, y: 3.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5312,7 +5312,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f58d98dfb6f4745bdc0601d9ac750d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedWool: {fileID: 0}
   selectedWool: {fileID: 231205411}
   anim: {fileID: 2046456485}
   itemWheelSelected: 0
@@ -5894,7 +5893,7 @@ Transform:
   m_GameObject: {fileID: 6008685832909004661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.51, y: 2.9899998, z: -10}
+  m_LocalPosition: {x: 7.51, y: 3.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6013,7 +6012,7 @@ Transform:
   m_GameObject: {fileID: 8811432891456453018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.51, y: 2.09, z: 0}
+  m_LocalPosition: {x: 7.51, y: 2.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6312,6 +6311,7 @@ MonoBehaviour:
   heldWool: {fileID: 1526360662}
   noWool: {fileID: -8527568592950175283, guid: 3677288694fc27c4ea8ea6299c460081, type: 3}
   flipped: 0
+  stunned: 0
 --- !u!1001 &5540209109786441904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6607,12 +6607,12 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.8, y: 0.1}
+  m_Size: {x: 0.8, y: 0.3}
   m_Direction: 1
 --- !u!114 &8421459802755115085
 MonoBehaviour:

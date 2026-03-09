@@ -33,7 +33,10 @@ public class playerController : MonoBehaviour
     Vector2 mouseRelativePosition;
     private healthManager healthManager;
     public bool flipped = false;
-    bool stunned;
+    public bool stunned;
+    float jumpTimer;
+    float lerpTime = 1f;
+    float lerpDuration = 1f;
     bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -52,7 +55,25 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
-        GetComponent<SpriteRenderer>().color = new Color(Random.Range(0,240),140,140);
+        if(stunned)
+        {
+            lerpTime += Time.deltaTime;
+            // Calculate how far along we are in the color transition (from 0 to 1)
+            float t = lerpTime / lerpDuration;
+
+            // Lerp smoothly from startColor to endColor using the calculated value 't'
+            playerSprite.color = Color.Lerp(Color.white, Color.red, t);
+        }
+        else
+        {
+            lerpTime += Time.deltaTime;
+            // Calculate how far along we are in the color transition (from 0 to 1)
+            float t = lerpTime / lerpDuration;
+
+            // Lerp smoothly from startColor to endColor using the calculated value 't'
+            playerSprite.color = Color.Lerp(Color.red, Color.white, t);
+        }
+
         if (Mouse.current != null)
         {
             Vector2 screenPosition = Mouse.current.position.ReadValue();
@@ -65,12 +86,19 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log($"Jump Timer : {jumpTimer}");
         if(IsGrounded())
         {
+            jumpTimer = 1;
             animator.SetBool("onGround?",true);
             animator.SetBool("isJumping",false);
         }
-        else{animator.SetBool("onGround?",false);}
+        else
+        {
+        animator.SetBool("onGround?",false);
+        if(jumpTimer > 0){jumpTimer -= 5 * Time.deltaTime;}
+        
+        }
         animator.SetFloat("yVelocity",rb.linearVelocityY);
 
         if(!stunned)
@@ -112,8 +140,9 @@ public class playerController : MonoBehaviour
     public void Jump(InputAction.CallbackContext context)
     {
         if(stunned){return;}
-        if(context.performed && IsGrounded() || stuck.isStuck)
+        if(context.performed && jumpTimer > 0 || stuck.isStuck)
         {
+            jumpTimer = 0;
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
             gameObject.transform.position += Vector3.up * .1f;
@@ -127,7 +156,9 @@ public class playerController : MonoBehaviour
 
     public void HitKnockback()
     {
+        lerpTime = 0f;
         stunned = true;
+        //playerSprite.color = Color.Lerp(playerSprite.color,Color.red,1f);
         /*
         if(flipped)
         {
@@ -137,12 +168,14 @@ public class playerController : MonoBehaviour
         rb.linearVelocityY = 4f;
         */
         //GetComponent<SpriteRenderer>().color = new Color(241,140,140);
-        Invoke(nameof(KnockbackCooldown),0.25f);
+        animator.Play("playerDamage");
     }
 
 
     private void KnockbackCooldown()
     {
+        lerpTime = 0f;
+        //playerSprite.color = Color.Lerp(playerSprite.color,Color.white,1f);
         stunned = false;
     }
 
