@@ -1,3 +1,4 @@
+
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -51,6 +52,7 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+        GetComponent<SpriteRenderer>().color = new Color(Random.Range(0,240),140,140);
         if (Mouse.current != null)
         {
             Vector2 screenPosition = Mouse.current.position.ReadValue();
@@ -92,16 +94,19 @@ public class playerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(stunned){horizontal = 0;return;}
-        horizontal = context.ReadValue<Vector2>().x;
-        if(horizontal != 0){moving = true;}else{moving = false;}
-        if(horizontal > 0 && horizontal != 0)
+        if(stunned){horizontal = 0;}
+        else
         {
-            flipped = false;
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            horizontal = context.ReadValue<Vector2>().x;
+            if(horizontal != 0){moving = true;}else{moving = false;}
+            if(horizontal > 0 && horizontal != 0)
+            {
+                flipped = false;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);flipped = true;}}
+            animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
         }
-        else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);flipped = true;}}
-        animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
     }
 
     public void Jump(InputAction.CallbackContext context)
@@ -123,15 +128,16 @@ public class playerController : MonoBehaviour
     public void HitKnockback()
     {
         stunned = true;
+        /*
         if(flipped)
         {
             rb.linearVelocityX = 5f;
         }
         else{rb.linearVelocityX = -5f;}
         rb.linearVelocityY = 4f;
-        
-        playerSprite.color = new Color(241,140,140);
-        Invoke(nameof(KnockbackCooldown),0.5f);
+        */
+        //GetComponent<SpriteRenderer>().color = new Color(241,140,140);
+        Invoke(nameof(KnockbackCooldown),0.25f);
     }
 
 
