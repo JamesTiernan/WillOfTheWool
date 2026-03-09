@@ -38,7 +38,14 @@ public class frogController : MonoBehaviour
     {
         canMove = true;
         animator.Play("Idle",animator.GetLayerIndex("Base Layer"));
-        transform.position = new Vector2(transform.position.x + 6,transform.position.y);
+        if(transform.localEulerAngles.y != 180)
+        {
+            transform.position = new Vector2(transform.localPosition.x + 6,transform.position.y);
+        }
+        else
+        {
+            transform.position = new Vector2(transform.position.x - 6,transform.position.y);
+        }
         playerDetectMovement.enabled = true;
     }
 }

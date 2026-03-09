@@ -1,3 +1,4 @@
+
 using System.Runtime.InteropServices.WindowsRuntime;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -32,7 +33,11 @@ public class playerController : MonoBehaviour
     Vector2 mouseRelativePosition;
     private healthManager healthManager;
     public bool flipped = false;
-    bool stunned;
+    public bool stunned;
+    public bool invincible;
+    float jumpTimer;
+    float lerpTime = 1f;
+    float lerpDuration = 1f;
     bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -51,6 +56,26 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+        if(stunned)
+        {
+            lerpTime += Time.deltaTime;
+            
+            // Calculate how far along we are in the color transition (from 0 to 1)
+            float t = lerpTime / lerpDuration;
+
+            // Lerp smoothly from startColor to endColor using the calculated value 't'
+            playerSprite.color = Color.Lerp(Color.white, Color.red, t);
+        }
+        else
+        {
+            lerpTime += Time.deltaTime;
+            // Calculate how far along we are in the color transition (from 0 to 1)
+            float t = lerpTime / lerpDuration;
+
+            // Lerp smoothly from startColor to endColor using the calculated value 't'
+            playerSprite.color = Color.Lerp(Color.red, Color.white, t);
+        }
+
         if (Mouse.current != null)
         {
             Vector2 screenPosition = Mouse.current.position.ReadValue();
@@ -63,12 +88,19 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log($"Jump Timer : {jumpTimer}");
         if(IsGrounded())
         {
+            jumpTimer = 1;
             animator.SetBool("onGround?",true);
             animator.SetBool("isJumping",false);
         }
-        else{animator.SetBool("onGround?",false);}
+        else
+        {
+        animator.SetBool("onGround?",false);
+        if(jumpTimer > 0){jumpTimer -= 5 * Time.deltaTime;}
+        
+        }
         animator.SetFloat("yVelocity",rb.linearVelocityY);
 
         if(!stunned)
@@ -92,23 +124,27 @@ public class playerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(stunned){horizontal = 0;return;}
-        horizontal = context.ReadValue<Vector2>().x;
-        if(horizontal != 0){moving = true;}else{moving = false;}
-        if(horizontal > 0 && horizontal != 0)
+        if(stunned){horizontal = 0;}
+        else
         {
-            flipped = false;
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            horizontal = context.ReadValue<Vector2>().x;
+            if(horizontal != 0){moving = true;}else{moving = false;}
+            if(horizontal > 0 && horizontal != 0)
+            {
+                flipped = false;
+                transform.localScale = new Vector3(1f, 1f, 1f);
+            }
+            else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);flipped = true;}}
+            animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
         }
-        else{if(horizontal < 0 && horizontal != 0){transform.localScale = new Vector3(-1f, 1f, 1f);flipped = true;}}
-        animator.SetFloat("xVelocity",Mathf.Abs(horizontal));
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
         if(stunned){return;}
-        if(context.performed && IsGrounded() || stuck.isStuck)
+        if(context.performed && jumpTimer > 0 || stuck.isStuck)
         {
+            jumpTimer = 0;
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
             gameObject.transform.position += Vector3.up * .1f;
@@ -122,22 +158,24 @@ public class playerController : MonoBehaviour
 
     public void HitKnockback()
     {
+        lerpTime = 0f;
         stunned = true;
-        if(flipped)
-        {
-            rb.linearVelocityX = 5f;
-        }
-        else{rb.linearVelocityX = -5f;}
-        rb.linearVelocityY = 4f;
-        
-        playerSprite.color = new Color(241,140,140);
-        Invoke(nameof(KnockbackCooldown),0.5f);
+        invincible = true;
+        animator.Play("playerDamage");
     }
 
 
     private void KnockbackCooldown()
     {
+        lerpTime = 0f;
+        //playerSprite.color = Color.Lerp(playerSprite.color,Color.white,1f);
         stunned = false;
+        Invoke(nameof(IFrameOver),2f);
+    }
+
+    private void IFrameOver()
+    {
+        invincible = false;
     }
 
     public void throwWool()

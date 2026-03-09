@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class thrownWool : MonoBehaviour
 {
-    Sprite woolSprite;
+    public Sprite woolSprite;
     magnetWool updateScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

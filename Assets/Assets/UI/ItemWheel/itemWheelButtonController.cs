@@ -35,7 +35,7 @@ public class itemWheelButtonController : MonoBehaviour
             }
         }
         if(amount <=0){GetComponent<Button>().interactable = false;return;}else{GetComponent<Button>().interactable = true;}
-        isOpen = GetComponentInParent<itemWheelController>();
+        isOpen = GetComponentInParent<itemWheelController>().itemWheelSelected;
         if (selected)
         {
             selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
@@ -52,7 +52,7 @@ public class itemWheelButtonController : MonoBehaviour
 
     public void Deselected()
     {
-        if(!isOpen){return;}
+        //if(!isOpen){return;}
         selected = false;
         itemWheelController.itemID = 0;
     }

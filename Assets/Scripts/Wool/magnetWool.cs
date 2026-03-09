@@ -3,10 +3,23 @@ using UnityEngine;
 public class magnetWool : MonoBehaviour
 {
     [SerializeField] LayerMask layer;
+    [SerializeField] float timer;
+    [SerializeField] GameObject woolDrop;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if(GetComponent<SpriteRenderer>().sprite.name == "magnetWool")
+        {
+            Invoke(nameof(Despawn),timer);
+        }
+    }
+
+    void Despawn()
+    {
+        GameObject newObj = Instantiate(woolDrop);
+        newObj.GetComponent<SpriteRenderer>().sprite = GetComponent<SpriteRenderer>().sprite;
+        newObj.transform.position = transform.position;
+        Destroy(gameObject);
     }
 
     // Update is called once per frame
@@ -22,7 +35,6 @@ public class magnetWool : MonoBehaviour
 
     public void CheckMagnetic()
     {
-        
         Collider2D other = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 2f,layer);
         if(other != null)
         {
