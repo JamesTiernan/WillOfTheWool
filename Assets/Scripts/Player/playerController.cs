@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour
         if(stunned)
         {
             lerpTime += Time.deltaTime;
-            
+
             // Calculate how far along we are in the color transition (from 0 to 1)
             float t = lerpTime / lerpDuration;
 
@@ -88,7 +88,7 @@ public class playerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log($"Jump Timer : {jumpTimer}");
+        //Debug.Log($"Jump Timer : {jumpTimer}");
         if(IsGrounded())
         {
             jumpTimer = 1;
