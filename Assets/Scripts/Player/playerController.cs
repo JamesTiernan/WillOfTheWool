@@ -36,8 +36,6 @@ public class playerController : MonoBehaviour
     public bool stunned;
     public bool invincible;
     float jumpTimer;
-    float lerpTime = 1f;
-    float lerpDuration = 1f;
     bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
@@ -56,26 +54,6 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
-        if(stunned)
-        {
-            lerpTime += Time.deltaTime;
-
-            // Calculate how far along we are in the color transition (from 0 to 1)
-            float t = lerpTime / lerpDuration;
-
-            // Lerp smoothly from startColor to endColor using the calculated value 't'
-            playerSprite.color = Color.Lerp(Color.white, Color.red, t);
-        }
-        else
-        {
-            lerpTime += Time.deltaTime;
-            // Calculate how far along we are in the color transition (from 0 to 1)
-            float t = lerpTime / lerpDuration;
-
-            // Lerp smoothly from startColor to endColor using the calculated value 't'
-            playerSprite.color = Color.Lerp(Color.red, Color.white, t);
-        }
-
         if (Mouse.current != null)
         {
             Vector2 screenPosition = Mouse.current.position.ReadValue();
@@ -107,6 +85,7 @@ public class playerController : MonoBehaviour
         {
             if(IsGrounded())
             {
+                rb.linearVelocityY = -1f;
                 rb.linearVelocityX *= 0.4f;
             }
             else
@@ -158,7 +137,6 @@ public class playerController : MonoBehaviour
 
     public void HitKnockback()
     {
-        lerpTime = 0f;
         stunned = true;
         invincible = true;
         animator.Play("playerDamage");
@@ -167,10 +145,8 @@ public class playerController : MonoBehaviour
 
     private void KnockbackCooldown()
     {
-        lerpTime = 0f;
-        //playerSprite.color = Color.Lerp(playerSprite.color,Color.white,1f);
         stunned = false;
-        Invoke(nameof(IFrameOver),2f);
+        Invoke(nameof(IFrameOver),2.5f);
     }
 
     private void IFrameOver()

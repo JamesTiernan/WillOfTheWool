@@ -21,13 +21,16 @@ public class woolHoover : MonoBehaviour
                 if(other != null)
                 {
                     if(!GetComponentInParent<woolPickup>().canPickup){return;}
-                    Debug.Log(other);
+                    
                     if(other.gameObject.CompareTag("Player"))
                     {
-                        Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
-                        Vector2 force = (Vector2)other.gameObject.transform.position - (Vector2)gameObject.transform.position;
-                        Vector2 totalForce = force.normalized * 5;
-                        rb.linearVelocity = totalForce;
+                        if(other.gameObject.GetComponent<healthManager>().health < other.gameObject.GetComponent<healthManager>().maxHealth)
+                        {
+                            Rigidbody2D rb = GetComponentInParent<Rigidbody2D>();
+                            Vector2 force = (Vector2)other.gameObject.transform.position - (Vector2)gameObject.transform.position;
+                            Vector2 totalForce = force.normalized * 5;
+                            rb.linearVelocity = totalForce;
+                        } 
                     }
                     else{return;}
                 }
