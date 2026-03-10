@@ -42,6 +42,7 @@ public class woolInventoryManager : MonoBehaviour
             if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<healthManager>().health -= 1;
                 return true;
             }
         }
@@ -56,6 +57,7 @@ public class woolInventoryManager : MonoBehaviour
             if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == false)
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<healthManager>().health += 1;
                 return true;
             }
             
@@ -67,6 +69,7 @@ public class woolInventoryManager : MonoBehaviour
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolType; 
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<healthManager>().health += 1;
                 return true;
             }
             

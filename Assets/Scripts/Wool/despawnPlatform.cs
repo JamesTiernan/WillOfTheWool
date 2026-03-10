@@ -16,6 +16,8 @@ public class despawnPlatform : MonoBehaviour
         GameObject newObj = Instantiate(basicWool);
         newObj.GetComponent<SpriteRenderer>().sprite = droppedSprite;
         newObj.transform.position = transform.position;
+        newObj.GetComponent<woolPickup>().scatterMin = 1f;
+        newObj.GetComponent<woolPickup>().scatterMax = 2f;
         Destroy(gameObject);
     }
 }
