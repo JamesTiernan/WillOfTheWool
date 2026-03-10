@@ -35,6 +35,7 @@ public class playerController : MonoBehaviour
     public bool flipped = false;
     public bool stunned;
     public bool invincible;
+    bool isThrowing;
     float jumpTimer;
     bool moving;
     private float horizontal;
@@ -103,7 +104,7 @@ public class playerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(stunned){horizontal = 0;}
+        if(stunned || isThrowing){horizontal = 0;}
         else
         {
             horizontal = context.ReadValue<Vector2>().x;
@@ -120,6 +121,7 @@ public class playerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        if(isThrowing){return;}
         if(stunned){return;}
         if(context.performed && jumpTimer > 0 || stuck.isStuck)
         {
@@ -165,11 +167,31 @@ public class playerController : MonoBehaviour
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10; 
     }
 
-    public void throwAnimationPlay()
+
+
+    
+    public void ThrowStart()
     {
         if(stunned){return;}
         if(itemWheelGUI.itemWheelSelected == true){return;}
         if(heldWool.GetComponent<SpriteRenderer>().sprite == noWool){return;}
-        animator.Play("playerThrowWool");
+        else
+        {
+            isThrowing = true;
+            animator.SetBool("thrown",false);
+            animator.Play("playerGrabWool");
+        }
+    }
+
+    public void ThrowComplete()
+    {
+        if(stunned){return;}
+        if(itemWheelGUI.itemWheelSelected == true){return;}
+        if(heldWool.GetComponent<SpriteRenderer>().sprite == noWool){return;}
+        if(isThrowing)
+        {
+            isThrowing=false;
+            animator.SetBool("thrown",true);
+        }
     }
 }

@@ -18,7 +18,7 @@ public class cloudSpawner : MonoBehaviour
 
     void makeCloud()
     {
-        GameObject newObject = Instantiate(baseObject);
+        GameObject newObject = Instantiate(baseObject,transform);
         newObject.transform.position = transform.position;
         newObject.transform.position += new Vector3(0,Random.Range(-6,6),0);
         newObject.GetComponent<SpriteRenderer>().sprite = cloudSprites[Random.Range(0,cloudSprites.Length)];
