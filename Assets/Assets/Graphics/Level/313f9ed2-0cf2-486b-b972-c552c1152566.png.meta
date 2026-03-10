@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: bec1f8b23c7303a488cd285ce46a32c3
+guid: dbcec9df8b3ce6a46806668a95631d75
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1221695334733553720
-    second: grassEdge_0
+      213: 3604006105061106183
+    second: 313f9ed2-0cf2-486b-b972-c552c1152566_0
+  - first:
+      213: -6992695208498318722
+    second: 313f9ed2-0cf2-486b-b972-c552c1152566_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: grassEdge_0
+      name: 313f9ed2-0cf2-486b-b972-c552c1152566_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 159
         y: 0
-        width: 165
-        height: 130
+        width: 1612
+        height: 1863
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8cf547dd09aab0fe0800000000000000
-      internalID: -1221695334733553720
+      spriteID: 702a18c2570040230800000000000000
+      internalID: 3604006105061106183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: 313f9ed2-0cf2-486b-b972-c552c1152566_1
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 1855
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e72b1eab1c4f4fe90800000000000000
+      internalID: -6992695208498318722
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      grassEdge_0: -1221695334733553720
+      313f9ed2-0cf2-486b-b972-c552c1152566_0: 3604006105061106183
+      313f9ed2-0cf2-486b-b972-c552c1152566_1: -6992695208498318722
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
