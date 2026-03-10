@@ -148,7 +148,7 @@ public class playerController : MonoBehaviour
     private void KnockbackCooldown()
     {
         stunned = false;
-        Invoke(nameof(IFrameOver),2.5f);
+        Invoke(nameof(IFrameOver),3f);
     }
 
     private void IFrameOver()

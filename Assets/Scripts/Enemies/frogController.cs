@@ -24,7 +24,6 @@ public class frogController : MonoBehaviour
             Hop();
             playerDetectMovement.enabled = false;
             playerDetectMovement.playerDetected = false;
-            Debug.Log("hop !");
         }
         animator.SetBool("Attack",playerDetectAttack.playerDetected);
         
@@ -39,7 +38,7 @@ public class frogController : MonoBehaviour
     {
         hops += 1;
         animator.Play("Idle",animator.GetLayerIndex("Base Layer"));
-        Debug.Log($"{transform.localEulerAngles.y} // {hops}");
+        //Debug.Log($"{transform.localEulerAngles.y} // {hops}");
         if(transform.localEulerAngles.y == 180)
         {
             transform.position = new Vector2(transform.position.x - 6,transform.position.y);
@@ -53,12 +52,10 @@ public class frogController : MonoBehaviour
         {
             if(transform.localEulerAngles.y == 0)
             {
-                Debug.Log("FLIP");
                 transform.rotation = Quaternion.Euler(0,180,0);
             }
             else if(transform.localEulerAngles.y == 180)
             {
-                Debug.Log("FLIP");
                 transform.rotation = Quaternion.Euler(0,0,0);
             }
             hops = 0;
