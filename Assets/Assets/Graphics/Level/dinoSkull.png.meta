@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 0beb067edfc1d4042adc210bdaaa3d56
+guid: 28510ed847c2cda4f94930433b952e2e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 518532233560755343
-    second: fossiltemp_0
+      213: 726507750055391494
+    second: dinoSkull_0
+  - first:
+      213: 6154878268383140017
+    second: dinoSkull_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,12 +49,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +103,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: fossiltemp_0
+      name: dinoSkull_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 264
-        height: 188
+        y: 3
+        width: 624
+        height: 642
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +118,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8c8af1b152323700800000000000000
-      internalID: 518532233560755343
+      spriteID: 601be9013f2151a00800000000000000
+      internalID: 726507750055391494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dinoSkull_1
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 33
+        width: 464
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b89fb6dc258a6550800000000000000
+      internalID: 6154878268383140017
       vertices: []
       indices: 
       edges: []
@@ -125,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      fossiltemp_0: 518532233560755343
+      dinoSkull_0: 726507750055391494
+      dinoSkull_1: 6154878268383140017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

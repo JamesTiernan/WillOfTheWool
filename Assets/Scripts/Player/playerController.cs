@@ -28,6 +28,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject woolPrefab;
     [SerializeField] GameObject heldWool;
     [SerializeField] Sprite noWool;
+    [SerializeField] public lastCheckpoint checkpointManager;
     getStuck stuck;
     Vector2 mouseWorldPosition;
     Vector2 mouseRelativePosition;
@@ -40,6 +41,7 @@ public class playerController : MonoBehaviour
     bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

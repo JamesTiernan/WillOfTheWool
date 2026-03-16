@@ -5,22 +5,42 @@ public class healthManager : MonoBehaviour
     [SerializeField] public int maxHealth;
     [SerializeField] GameObject damageEffect;
     [SerializeField] public int health;
+
+    public bool isDead = false;
+
+    [SerializeField] public GameObject gameoverScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        gameoverScreen.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!isDead)
+        {
+            if(health < 0)
+            {
+                isDead = true;
+                Debug.Log("GAME VOER SCREENEENR");
+                health = 0;
+                gameoverScreen.SetActive(true);
+            }
+        }
     }
 
     public void Damage(int amount ,bool drop)
     {
         if(GetComponent<playerController>().invincible){return;}
-
+        if(health == 0)
+        {
+            isDead = true;
+            Debug.Log("GAME VOER SCREENEENR");
+            health = 0;
+            gameoverScreen.SetActive(true);
+            return; 
+        }
         Sprite newSprite = null;
         for(int i = 0; i<amount; i++)
         {
@@ -42,9 +62,8 @@ public class healthManager : MonoBehaviour
                 newObj.GetComponent<woolPickup>().scatterMin = 6f;
                 newObj.GetComponent<woolPickup>().scatterMax = 8f;
             }
-            
-            if(health < 0){health =0; Debug.Log("u dead");}
-        }  
+        }
+
     }
 
     public void Heal(int amount,Sprite woolType)
