@@ -6,6 +6,7 @@ public class woolInventoryManager : MonoBehaviour
     [SerializeField] Sprite emptySprite;
     [SerializeField] Sprite woolSprite;
     [SerializeField] public GameObject[] woolHeld;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,10 +16,6 @@ public class woolInventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health.health < 0)
-        {
-            Debug.Log("GAME OVER");
-        }
         /*
         for(int i =13;i >= 0; i--)
         {
@@ -47,6 +44,15 @@ public class woolInventoryManager : MonoBehaviour
             }
         }
         return false;
+    }
+
+    public void RespawnWool()
+    {
+        // Check for wool in inventory, set as disabled and return once found.
+        for(int i =13;i>=0;i--)
+        {
+            woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     public bool GainWool(Sprite woolType)
