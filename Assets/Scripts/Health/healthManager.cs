@@ -33,6 +33,14 @@ public class healthManager : MonoBehaviour
     public void Damage(int amount ,bool drop)
     {
         if(GetComponent<playerController>().invincible){return;}
+        if(health == 0)
+        {
+            isDead = true;
+            Debug.Log("GAME VOER SCREENEENR");
+            health = 0;
+            gameoverScreen.SetActive(true);
+            return; 
+        }
         Sprite newSprite = null;
         for(int i = 0; i<amount; i++)
         {
