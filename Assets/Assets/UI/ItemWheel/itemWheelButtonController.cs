@@ -12,7 +12,7 @@ public class itemWheelButtonController : MonoBehaviour
     private Animator anim;
     public string itemName;
     public TextMeshProUGUI itemText;
-    public GameObject heldWool;
+    public GameObject selectedItem;
     private bool selected = false;
     public Sprite icon;
 
@@ -26,28 +26,21 @@ public class itemWheelButtonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isOpen = GetComponentInParent<itemWheelController>().itemWheelSelected;
-        if(isOpen)
+        amount = 0;
+        for(int i = 0;i<woolInventory.woolHeld.Length;i++)
         {
-            amount = 0;
-            for(int i = 0;i<woolInventory.woolHeld.Length;i++)
+            if(woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == icon.name && woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
             {
-                if(woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == icon.name && woolInventory.woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
-                {
-                    amount += 1;
-                }
-            }
-            if(amount <=0)
-            {
-                GetComponent<Button>().interactable = false;
-                return;
-            }
-            else
-            {
-                GetComponent<Button>().interactable = true;
+                amount += 1;
             }
         }
-
+        if(amount <=0){GetComponent<Button>().interactable = false;return;}else{GetComponent<Button>().interactable = true;}
+        isOpen = GetComponentInParent<itemWheelController>().itemWheelSelected;
+        if (selected)
+        {
+            selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
+            itemText.text = $"{itemName} --- {amount}";
+        }
     }
 
     public void Selected()
@@ -55,13 +48,6 @@ public class itemWheelButtonController : MonoBehaviour
         if(!isOpen){return;}
         selected = true;
         itemWheelController.itemID = ID;
-        Debug.Log("bing");
-        GetComponentInParent<itemWheelController>().AddWool(icon);
-        /*if(GetComponentInParent<itemWheelController>().woolFull() == false)
-        {
-            GetComponentInParent<itemWheelController>().AddWool();
-        }*/
-        heldWool.GetComponent<SpriteRenderer>().sprite = icon;
     }
 
     public void Deselected()
@@ -75,7 +61,7 @@ public class itemWheelButtonController : MonoBehaviour
     {
         if(!isOpen){return;}
         anim.SetBool("hover",true);
-        itemText.text = $"{itemName} --- {amount}";
+        itemText.text = itemName;
     }
     public void HoverExit()
     {
