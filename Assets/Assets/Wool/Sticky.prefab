@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3457473876340668667}
   - component: {fileID: 1420088465849094652}
   - component: {fileID: 2432106685472572987}
+  - component: {fileID: 4322724421631650038}
   m_Layer: 9
   m_Name: Sticky
   m_TagString: Sticky
@@ -147,6 +148,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2f02a5745c58c742ac87ea30d107490, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 3
+  time: 4
   basicWool: {fileID: 8164450900695082596, guid: ad8d1742e2febed418493f3683127931, type: 3}
   droppedSprite: {fileID: 21300000, guid: 558bd8bcfd764814b9a162f2b4f813f2, type: 3}
+--- !u!50 &4322724421631650038
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 906644774019738}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

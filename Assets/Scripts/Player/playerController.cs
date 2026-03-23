@@ -161,11 +161,19 @@ public class playerController : MonoBehaviour
     public void throwWool()
     {
         Sprite mySprite = heldWool.GetComponent<SpriteRenderer>().sprite;
+        if(!GetComponent<woolInventoryManager>().HasWool(mySprite))
+        {
+            heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
+            return;
+        }
         GetComponent<woolInventoryManager>().LoseWool(mySprite);
         GameObject newObj = Instantiate(woolPrefab);
         newObj.transform.position = heldWool.transform.position;
         newObj.GetComponent<SpriteRenderer>().sprite = heldWool.GetComponent<SpriteRenderer>().sprite;
-        heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
+        if(!GetComponent<woolInventoryManager>().HasWool(mySprite))
+        {
+            heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
+        }
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10; 
     }
 

@@ -16,19 +16,7 @@ public class woolInventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        for(int i =13;i >= 0; i--)
-        {
-            if(health.health < 1){woolHeld[i].GetComponent<SpriteRenderer>().sprite = emptySprite;}
-            else if(i < health.health)
-            {
-                woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
-            }
-            else
-            {
-                woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }*/
+
     }
 
     public bool LoseWool(Sprite woolType)
@@ -46,6 +34,19 @@ public class woolInventoryManager : MonoBehaviour
         return false;
     }
 
+
+    public bool HasWool(Sprite woolType)
+    {
+        // Check for wool in inventory
+        for(int i =13;i>=0;i--)
+        {
+            if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public void RespawnWool()
     {
         // Check for wool in inventory, set as disabled and return once found.

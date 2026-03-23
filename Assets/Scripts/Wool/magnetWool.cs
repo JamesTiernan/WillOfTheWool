@@ -30,10 +30,10 @@ public class magnetWool : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(new Vector2(transform.position.x, transform.position.y),2f);
+        Gizmos.DrawWireSphere(new Vector2(transform.position.x, transform.position.y),2f);
     }
 
-    public void CheckMagnetic()
+    public void Check()
     {
         Collider2D other = Physics2D.OverlapCircle(new Vector2(transform.position.x, transform.position.y), 2f,layer);
         if(other != null)
