@@ -3,6 +3,7 @@ using UnityEngine;
 public class thrownWool : MonoBehaviour
 {
     public Sprite woolSprite;
+    int check;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -22,24 +23,37 @@ public class thrownWool : MonoBehaviour
     
     void OnCollisionEnter2D(Collision2D collision)
     {
-        woolSprite = GetComponent<SpriteRenderer>().sprite;
-        Debug.Log(woolSprite.name);
-        if(woolSprite.name == "stickyWool")
+        check += 1;
+        CheckMyWool();
+    }
+
+    void CheckMyWool()
+    {
+        if(check == 1)
         {
-            GetComponent<stickObjects>().Check();
-           
-            //GetComponent<stickyWool>().Create();
-            //Destroy(gameObject);
-        }
-        if(woolSprite.name == "fireWool")
-        {
-            GetComponent<fireWool>().Create();
-            Destroy(gameObject);
-        }
-        if(woolSprite.name == "basicWool")
-        {
-            GetComponent<basicWool>().Create();
-            Destroy(gameObject);
+            woolSprite = GetComponent<SpriteRenderer>().sprite;
+            Debug.Log(woolSprite.name);
+            if(woolSprite.name == "stickyWool")
+            {
+                if(!GetComponent<stickObjects>().Check())
+                {
+                    GetComponent<stickyWool>().Create();
+                    Destroy(gameObject);
+                }
+            
+                
+            }
+            if(woolSprite.name == "fireWool")
+            {
+                GetComponent<fireWool>().Create();
+                Destroy(gameObject);
+            }
+            if(woolSprite.name == "basicWool")
+            {
+                GetComponent<basicWool>().Create();
+                Destroy(gameObject);
+            }
         }
     }
 }
+
