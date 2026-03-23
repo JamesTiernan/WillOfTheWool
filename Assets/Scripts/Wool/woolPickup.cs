@@ -4,6 +4,8 @@ public class woolPickup : MonoBehaviour
 {
     [SerializeField] int value;
     public bool canPickup;
+    public float scatterMin;
+    public float scatterMax;
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,9 +14,9 @@ public class woolPickup : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         if(Random.Range(0,6) > 3)
         {
-            rb.linearVelocityX = Random.Range(-1f,-2f);
+            rb.linearVelocityX = Random.Range(scatterMin,scatterMax) * -1;
         }
-        else{rb.linearVelocityX = Random.Range(1f,2f);}
+        else{rb.linearVelocityX = Random.Range(scatterMin,scatterMax);}
         
         rb.linearVelocityY = Random.Range(3f,5.4f);
         Invoke(nameof(PickupCooldown),1f);
@@ -32,10 +34,14 @@ public class woolPickup : MonoBehaviour
         //Debug.Log(other);
         if(other.gameObject.CompareTag("Player"))
         {
-            Sprite mySprite = GetComponent<SpriteRenderer>().sprite;
-            other.gameObject.GetComponent<healthManager>().Heal(value, mySprite);
-            //other.GetComponent<visualWoolManager>();
-            Destroy(gameObject);
+            if(other.gameObject.GetComponent<healthManager>().health < other.gameObject.GetComponent<healthManager>().maxHealth)
+            {
+                Sprite mySprite = GetComponent<SpriteRenderer>().sprite;
+                
+                other.gameObject.GetComponent<healthManager>().Heal(value, mySprite);
+                //other.GetComponent<visualWoolManager>();
+                Destroy(gameObject);
+            }
         }
         else{return;}
     }

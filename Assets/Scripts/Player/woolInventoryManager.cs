@@ -6,6 +6,7 @@ public class woolInventoryManager : MonoBehaviour
     [SerializeField] Sprite emptySprite;
     [SerializeField] Sprite woolSprite;
     [SerializeField] public GameObject[] woolHeld;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,10 +16,6 @@ public class woolInventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health.health < 0)
-        {
-            Debug.Log("GAME OVER");
-        }
         /*
         for(int i =13;i >= 0; i--)
         {
@@ -42,10 +39,20 @@ public class woolInventoryManager : MonoBehaviour
             if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == true)
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
+                GetComponent<healthManager>().health -= 1;
                 return true;
             }
         }
         return false;
+    }
+
+    public void RespawnWool()
+    {
+        // Check for wool in inventory, set as disabled and return once found.
+        for(int i =13;i>=0;i--)
+        {
+            woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     public bool GainWool(Sprite woolType)
@@ -56,6 +63,7 @@ public class woolInventoryManager : MonoBehaviour
             if(woolHeld[i].GetComponent<SpriteRenderer>().sprite.name == woolType.name && woolHeld[i].GetComponent<SpriteRenderer>().enabled == false)
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<healthManager>().health += 1;
                 return true;
             }
             
@@ -67,6 +75,7 @@ public class woolInventoryManager : MonoBehaviour
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolType; 
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
+                GetComponent<healthManager>().health += 1;
                 return true;
             }
             
