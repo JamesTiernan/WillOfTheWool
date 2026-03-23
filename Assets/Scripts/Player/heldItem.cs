@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class heldItem : MonoBehaviour
 {
-    public GameObject heldObject;
+    public Sprite heldObject;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,6 +13,6 @@ public class heldItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        GetComponent<SpriteRenderer>().sprite = heldObject;
     }
 }
