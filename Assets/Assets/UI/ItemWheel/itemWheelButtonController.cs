@@ -36,6 +36,10 @@ public class itemWheelButtonController : MonoBehaviour
         }
         if(amount <=0){GetComponent<Button>().interactable = false;return;}else{GetComponent<Button>().interactable = true;}
         isOpen = GetComponentInParent<itemWheelController>().itemWheelSelected;
+        if(!isOpen)
+        {
+            itemText.text = $"";
+        }
         if (selected)
         {
             selectedItem.GetComponent<SpriteRenderer>().sprite = icon;
