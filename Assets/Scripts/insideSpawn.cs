@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class Inside : MonoBehaviour
+public class insideSpawn : MonoBehaviour
 {
 
     [SerializeField] Transform Spawnpoint;
