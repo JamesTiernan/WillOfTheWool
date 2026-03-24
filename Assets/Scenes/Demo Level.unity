@@ -1044,7 +1044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8731322336573373337, guid: 58d9976f9cd91224899bb8225ad27290, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8731322336573373337, guid: 58d9976f9cd91224899bb8225ad27290, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -1252,7 +1252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9182773807705241330, guid: 58d9976f9cd91224899bb8225ad27290, type: 3}
       propertyPath: m_IsTrigger
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9182773807705241330, guid: 58d9976f9cd91224899bb8225ad27290, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -22778,15 +22778,15 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 99361729}
+  - {fileID: 1286137328}
+  - {fileID: 2124877621}
   - {fileID: 3268541029288130949}
   - {fileID: 7572140028671619999}
   - {fileID: 1257671497}
   - {fileID: 1397916092}
-  - {fileID: 1286137328}
-  - {fileID: 2124877621}
   - {fileID: 351732170}
   - {fileID: 5105112150835788470}
   - {fileID: 1443959617}
   - {fileID: 59348934}
   - {fileID: 299960029}
-  - {fileID: 99361729}

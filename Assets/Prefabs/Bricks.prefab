@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8583000640377734900
+--- !u!1 &3591220706613248253
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,40 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5022949229722471857}
-  - component: {fileID: 2481116494486166801}
-  - component: {fileID: 657526130976327576}
-  - component: {fileID: 2038635812230081461}
-  - component: {fileID: 3049550680621912245}
+  - component: {fileID: 4654111003462681852}
+  - component: {fileID: 1680710897889217943}
+  - component: {fileID: 6050881699622364415}
+  - component: {fileID: 4942303112863422286}
+  - component: {fileID: -7934314520645357196}
   m_Layer: 6
-  m_Name: Dirt
+  m_Name: Bricks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5022949229722471857
+--- !u!4 &4654111003462681852
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583000640377734900}
+  m_GameObject: {fileID: 3591220706613248253}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.909327, y: 8.445392, z: 0}
+  m_LocalPosition: {x: 127.76, y: 8.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1971053207 &2481116494486166801
+--- !u!1971053207 &1680710897889217943
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583000640377734900}
+  m_GameObject: {fileID: 3591220706613248253}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,11 +80,11 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8238993, g: 0.7677636, b: 0.6554922, a: 1}
   m_MaskInteraction: 0
-  m_ShapeTexture: {fileID: 2800000, guid: 67529db927d49074b8e8fb8f38783e80, type: 3}
+  m_ShapeTexture: {fileID: 2800000, guid: 1d4c375ecc6510949ab5614831c4cee4, type: 3}
   m_Sprites:
-  - {fileID: -4457726861206861528, guid: 013795027d1b2074ea94df55baae69a6, type: 3}
+  - {fileID: 529046390992573038, guid: 9fc980c5ba2039746a7b5a5c939b1a5b, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
@@ -94,16 +94,16 @@ SpriteShapeRenderer:
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   - {fileID: 21300000, guid: 608e61deb05c54660bebf5a4dd2ee02d, type: 3}
   m_LocalAABB:
-    m_Center: {x: -0.2576579, y: -0.23841834, z: 0}
-    m_Extent: {x: 1.9443148, y: 1.271197, z: 0}
+    m_Center: {x: -0.25763988, y: -0.2384665, z: 0}
+    m_Extent: {x: 2.194273, y: 1.5211487, z: 0}
   m_SpriteSortPoint: 0
---- !u!114 &657526130976327576
+--- !u!114 &6050881699622364415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583000640377734900}
+  m_GameObject: {fileID: 3591220706613248253}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90539df1cd5704abcb25fec9f3f5f84b, type: 3}
@@ -176,7 +176,7 @@ MonoBehaviour:
       spriteIndex: 0
       corner: 1
       m_CornerMode: 1
-  m_SpriteShape: {fileID: 11400000, guid: d87fb95e533df4d41bac8a521dcd826f, type: 2}
+  m_SpriteShape: {fileID: 11400000, guid: a531253c0ae87604691cf053b6832462, type: 2}
   m_FillPixelPerUnit: 110
   m_StretchTiling: 1
   m_SplineDetail: 16
@@ -197,27 +197,22 @@ MonoBehaviour:
   m_Creator: {fileID: 0}
   m_Modifiers: []
   m_ColliderSegment:
-  - {x: -1.7620777, y: -0.51203656}
-  - {x: -1.7410077, y: 0.4730711}
-  - {x: -1.5271134, y: 0.59294814}
-  - {x: 0.94788074, y: 0.57526994}
-  - {x: 1.1592492, y: 0.40391147}
-  - {x: 1.2441623, y: -0.73924315}
-  - {x: 1.0562768, y: -0.958678}
-  - {x: 0.79513216, y: -1.0571253}
-  - {x: -1.0221887, y: -1.0663829}
-  - {x: -1.3463712, y: -1.0445355}
-  - {x: -1.5761268, y: -0.87713075}
-  - {x: -1.7530341, y: -0.57390404}
-  - {x: -1.7620777, y: -0.51203656}
+  - {x: -1.5121374, y: -0.5174978}
+  - {x: -1.4979831, y: 0.3428977}
+  - {x: 0.9370767, y: 0.32678613}
+  - {x: 0.99672323, y: -0.7195593}
+  - {x: 0.6902548, y: -0.81814736}
+  - {x: -1.0180712, y: -0.8164168}
+  - {x: -1.3002014, y: -0.78885007}
+  - {x: -1.5121374, y: -0.5174978}
   m_ShadowSegment: []
---- !u!68 &2038635812230081461
+--- !u!68 &4942303112863422286
 EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583000640377734900}
+  m_GameObject: {fileID: 3591220706613248253}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -248,30 +243,25 @@ EdgeCollider2D:
   m_Offset: {x: 0, y: 0}
   m_EdgeRadius: 0.25
   m_Points:
-  - {x: -1.7620777, y: -0.51203656}
-  - {x: -1.7410077, y: 0.4730711}
-  - {x: -1.5271134, y: 0.59294814}
-  - {x: 0.94788074, y: 0.57526994}
-  - {x: 1.1592492, y: 0.40391147}
-  - {x: 1.2441623, y: -0.73924315}
-  - {x: 1.0562768, y: -0.958678}
-  - {x: 0.79513216, y: -1.0571253}
-  - {x: -1.0221887, y: -1.0663829}
-  - {x: -1.3463712, y: -1.0445355}
-  - {x: -1.5761268, y: -0.87713075}
-  - {x: -1.7530341, y: -0.57390404}
-  - {x: -1.7620777, y: -0.51203656}
+  - {x: -1.5121374, y: -0.5174978}
+  - {x: -1.4979831, y: 0.3428977}
+  - {x: 0.9370767, y: 0.32678613}
+  - {x: 0.99672323, y: -0.7195593}
+  - {x: 0.6902548, y: -0.81814736}
+  - {x: -1.0180712, y: -0.8164168}
+  - {x: -1.3002014, y: -0.78885007}
+  - {x: -1.5121374, y: -0.5174978}
   m_AdjacentStartPoint: {x: 0, y: 0}
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!251 &3049550680621912245
+--- !u!251 &-7934314520645357196
 PlatformEffector2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8583000640377734900}
+  m_GameObject: {fileID: 3591220706613248253}
   m_Enabled: 1
   m_UseColliderMask: 1
   m_ColliderMask:
