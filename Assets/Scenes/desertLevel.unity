@@ -2519,7 +2519,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -3474,7 +3474,7 @@ Transform:
   m_GameObject: {fileID: 787682012}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65.9, y: 5.9, z: 0}
+  m_LocalPosition: {x: 59.38, y: 4.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4079,7 +4079,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1680710897889217943, guid: 2cfd0ccb67c974843bbf8a1d41bf70be, type: 3}
       propertyPath: m_DynamicOccludee
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1680710897889217943, guid: 2cfd0ccb67c974843bbf8a1d41bf70be, type: 3}
       propertyPath: m_LocalAABB.m_Center.x
@@ -7820,7 +7820,7 @@ Transform:
   m_GameObject: {fileID: 1697902121}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.31, y: 2.16, z: 0}
+  m_LocalPosition: {x: 16.53, y: 2.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
