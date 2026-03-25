@@ -126,7 +126,7 @@ public class playerController : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        if(stunned || isThrowing){horizontal = 0;}
+        if(stunned){horizontal = 0;}
         else
         {
             horizontal = context.ReadValue<Vector2>().x;
@@ -143,7 +143,7 @@ public class playerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if(isThrowing){return;}
+        //if(isThrowing){return;}
         if(stunned){return;}
         if(context.performed && jumpTimer > 0 || stuck.isStuck)
         {
