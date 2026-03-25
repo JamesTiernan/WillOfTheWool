@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class checkpoint : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class checkpoint : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GetComponent<Light2D>().enabled = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -17,6 +18,7 @@ public class checkpoint : MonoBehaviour
            lastCheckpoint checkpointSet = other.GetComponent<playerController>().checkpointManager;
            checkpointSet.checkpointPosition = transform;
            GetComponent<SpriteRenderer>().sprite = active;
+           GetComponent<Light2D>().enabled = true;
         }
     }
 }
