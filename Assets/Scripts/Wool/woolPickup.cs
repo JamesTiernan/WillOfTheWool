@@ -3,6 +3,7 @@ using UnityEngine;
 public class woolPickup : MonoBehaviour
 {
     [SerializeField] int value;
+    [SerializeField] GameObject fireLight;
     public bool canPickup;
     public float scatterMin;
     public float scatterMax;
@@ -20,6 +21,12 @@ public class woolPickup : MonoBehaviour
         
         rb.linearVelocityY = Random.Range(3f,5.4f);
         Invoke(nameof(PickupCooldown),1f);
+        if(GetComponent<SpriteRenderer>().sprite.name == "fireWool")
+        {
+            GameObject light = Instantiate(fireLight);
+            light.transform.parent = transform;
+            light.transform.position = transform.position;
+        }
     }
 
     
