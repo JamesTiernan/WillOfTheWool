@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using Unity.Mathematics;
 
 public class playerController : MonoBehaviour
 {
@@ -41,6 +42,12 @@ public class playerController : MonoBehaviour
     bool moving;
     private float horizontal;
     private SpriteRenderer playerSprite;
+
+    // Trajectory
+    [Header("Trajectory")]
+    [SerializeField] LineRenderer lineRenderer;
+    [SerializeField] int linePoints = 175;
+    [SerializeField] float timeBetweenPoints = 0.01f;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -62,6 +69,19 @@ public class playerController : MonoBehaviour
             Vector2 screenPosition = Mouse.current.position.ReadValue();
             mouseWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
             mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)gameObject.transform.position;
+
+            if(lineRenderer != null)
+            {
+                if(isThrowing)
+                {
+                    DrawTrajectory();
+                    lineRenderer.enabled = true;
+                }
+                else
+                {
+                    lineRenderer.enabled = false;
+                }
+            }
             //Debug.Log($"World Position: {mouseWorldPosition}");
         }
 
@@ -177,6 +197,21 @@ public class playerController : MonoBehaviour
         newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10; 
     }
 
+    void DrawTrajectory()
+    {
+        Vector3 origin = heldWool.transform.position;
+        Vector3 startVelocity = mouseRelativePosition.normalized * 10;
+        lineRenderer.positionCount = linePoints;
+        float time = 0;
+        for (int i = 0;i<linePoints;i++)
+        {
+            var x = (startVelocity.x * time) + (Physics2D.gravity.x / 2 * time * time);
+            var y = (startVelocity.y * time) + (Physics2D.gravity.y / 2 * time * time);
+            Vector3 point = new Vector3(x,y,0);
+            lineRenderer.SetPosition(i,origin + point);
+            time += timeBetweenPoints;
+        }
+    }
 
 
     
