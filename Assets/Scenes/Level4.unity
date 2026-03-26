@@ -2690,6 +2690,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -219.634
       objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2833,6 +2837,10 @@ PrefabInstance:
     - target: {fileID: 4980061049682113972, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -143.244
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3618,6 +3626,10 @@ PrefabInstance:
     - target: {fileID: 4980061049682113972, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -188.487
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5537,7 +5549,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -5786,6 +5798,10 @@ PrefabInstance:
     - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
       propertyPath: m_Color.r
       value: 0.99607843
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6611306427757604528, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
       propertyPath: m_Sprite
@@ -7200,7 +7216,7 @@ PlatformEffector2D:
   m_UseColliderMask: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 0
   m_UseOneWayGrouping: 0
@@ -7428,6 +7444,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -134.641
       objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -7484,6 +7504,10 @@ PrefabInstance:
     - target: {fileID: 4980061049682113972, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -213.553
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294579579527330701, guid: d070e07e4692f5f4d99709c68275be9b, type: 3}
+      propertyPath: m_ShadowsEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10727,7 +10751,7 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowsEnabled: 1
+  m_ShadowsEnabled: 0
   m_ShadowIntensity: 0.75
   m_ShadowSoftness: 0.3
   m_ShadowSoftnessFalloffIntensity: 0.5
@@ -10769,8 +10793,8 @@ MonoBehaviour:
   - {x: -11.329944, y: -5.8053107, z: 0}
   - {x: -13.095349, y: -5.5406513, z: 0}
   - {x: -14.623684, y: -3.9989882, z: 0}
-  - {x: -10.304039, y: -3.617199, z: 0}
-  - {x: -9.050417, y: -4.4399323, z: 0}
+  - {x: -11.029675, y: -3.7479067, z: 0}
+  - {x: -8.968667, y: -4.3849354, z: 0}
   - {x: -4.777297, y: -4.108876, z: 0}
   - {x: -4.6288357, y: -1.9100096, z: 0}
   - {x: 2.25557, y: -1.124919, z: 0}
