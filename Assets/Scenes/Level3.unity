@@ -227,11 +227,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5411845175826952936, guid: 64a1693034ab6d345be6b32f4cad236b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.67
+      value: 36.47
       objectReference: {fileID: 0}
     - target: {fileID: 5411845175826952936, guid: 64a1693034ab6d345be6b32f4cad236b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.48
+      value: 13.67
       objectReference: {fileID: 0}
     - target: {fileID: 5411845175826952936, guid: 64a1693034ab6d345be6b32f4cad236b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11515,6 +11515,10 @@ PrefabInstance:
     - target: {fileID: 1798396106755717777, guid: 6c022dba8b333c149a661bb3939dcb18, type: 3}
       propertyPath: m_Name
       value: NPC Dialogue GUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798396106755717777, guid: 6c022dba8b333c149a661bb3939dcb18, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4502170298434099757, guid: 6c022dba8b333c149a661bb3939dcb18, type: 3}
       propertyPath: m_Pivot.x
