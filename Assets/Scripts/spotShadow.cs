@@ -10,12 +10,14 @@ public class spotShadow : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        shadowSprite.transform.localScale = new Vector3(shadowSize * 1.3f,shadowSize,shadowSize);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        shadowSprite.transform.localScale = new Vector3(shadowSize * 1.3f,shadowSize,shadowSize);
+
         transform.rotation = Quaternion.identity;
         RaycastHit2D intersect = Physics2D.Raycast(transform.position, Vector2.down, 2.5f, layerMask);
 

@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class thrownWool : MonoBehaviour
 {
+    [Header("Lights")]
+    [SerializeField] GameObject fireLight;
+    [SerializeField] GameObject basicLight;
+    [SerializeField] GameObject stickyLight;
+    [SerializeField] GameObject magnetLight;
     public Sprite woolSprite;
     int check;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -9,7 +14,32 @@ public class thrownWool : MonoBehaviour
     {
         woolSprite = GetComponent<SpriteRenderer>().sprite;
         Debug.Log(woolSprite.name);
-        
+
+        GameObject lightSpawn = null;
+        if(woolSprite.name == "fireWool")
+        {
+            lightSpawn = fireLight;
+        }
+        else if(woolSprite.name == "basicWool")
+        {
+            lightSpawn = basicLight;
+        }
+        else if(woolSprite.name == "magnetWool")
+        {
+            lightSpawn = magnetLight;
+        }
+        else if(woolSprite.name == "stickyWool")
+        {
+            lightSpawn = stickyLight;
+        }
+
+        if(lightSpawn == null)
+        {
+            lightSpawn = basicLight;
+        }
+        GameObject light = Instantiate(lightSpawn);
+        light.transform.parent = transform;
+        light.transform.position = transform.position;
     }
 
     // Update is called once per frame

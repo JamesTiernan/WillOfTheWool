@@ -3,7 +3,11 @@ using UnityEngine;
 public class woolPickup : MonoBehaviour
 {
     [SerializeField] int value;
+    [Header("Lights")]
     [SerializeField] GameObject fireLight;
+    [SerializeField] GameObject basicLight;
+    [SerializeField] GameObject stickyLight;
+    [SerializeField] GameObject magnetLight;
     public bool canPickup;
     public float scatterMin;
     public float scatterMax;
@@ -21,14 +25,36 @@ public class woolPickup : MonoBehaviour
         
         rb.linearVelocityY = Random.Range(3f,5.4f);
         Invoke(nameof(PickupCooldown),1f);
-        if(GetComponent<SpriteRenderer>().sprite.name == "fireWool")
-        {
-            GameObject light = Instantiate(fireLight);
-            light.transform.parent = transform;
-            light.transform.position = transform.position;
-        }
-    }
 
+        Sprite woolSprite = GetComponent<SpriteRenderer>().sprite;
+
+        GameObject lightSpawn = null;
+
+        if(woolSprite.name == "fireWool")
+        {
+            lightSpawn = fireLight;
+        }
+        else if(woolSprite.name == "basicWool")
+        {
+            lightSpawn = basicLight;
+        }
+        else if(woolSprite.name == "magnetWool")
+        {
+            lightSpawn = magnetLight;
+        }
+        else if(woolSprite.name == "stickyWool")
+        {
+            lightSpawn = stickyLight;
+        }
+
+        if(lightSpawn == null)
+        {
+            lightSpawn = basicLight;
+        }
+        GameObject light = Instantiate(lightSpawn);
+        light.transform.parent = transform;
+        light.transform.position = transform.position;
+    }
     
     void PickupCooldown()
     {
