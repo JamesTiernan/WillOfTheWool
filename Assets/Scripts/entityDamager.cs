@@ -6,6 +6,8 @@ public class entityDamager : MonoBehaviour
     [SerializeField] int amount;
     [SerializeField] LayerMask entityDamageLayer;
 
+    private SpriteRenderer spriteRenderer;
+
     // Update is called once per frame
     void Update()
     {
@@ -14,7 +16,7 @@ public class entityDamager : MonoBehaviour
         {
             coll.gameObject.GetComponent<entityHealth>().Damage(amount);
             Destroy(gameObject);
+
         }
     }
-
 }
