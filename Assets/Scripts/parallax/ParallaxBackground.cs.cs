@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class ParallaxBackground : MonoBehaviour
 {
     ParallaxCamera parallaxCamera;
@@ -9,6 +8,8 @@ public class ParallaxBackground : MonoBehaviour
 
     void Start()
     {
+        parallaxLayers = new List<ParallaxLayer>();
+        Debug.Log("parallax reset");
         if (parallaxCamera == null)
             parallaxCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ParallaxCamera>();
 
@@ -38,7 +39,10 @@ public class ParallaxBackground : MonoBehaviour
     {
         foreach (ParallaxLayer layer in parallaxLayers)
         {
+            if(layer != null)
+            {
             layer.Move(delta);
+            }
         }
     }
 }
