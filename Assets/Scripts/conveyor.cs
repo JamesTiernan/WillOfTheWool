@@ -29,6 +29,7 @@ public class conveyor : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<conveyorEffect>() != null)
         {
+            collision.gameObject.GetComponent<conveyorEffect>().speed = 0;
             collision.gameObject.GetComponent<conveyorEffect>().onConveyor = false;
         }
     }
