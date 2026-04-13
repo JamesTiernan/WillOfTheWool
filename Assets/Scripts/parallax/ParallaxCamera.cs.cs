@@ -1,6 +1,5 @@
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class ParallaxCamera : MonoBehaviour
 {
     public delegate void ParallaxCameraDelegate(float deltaMovement);
@@ -21,6 +20,7 @@ public class ParallaxCamera : MonoBehaviour
             {
                 float delta = oldPosition - transform.position.x;
                 onCameraTranslate(delta);
+                
             }
 
             oldPosition = transform.position.x;
