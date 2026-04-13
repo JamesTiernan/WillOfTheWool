@@ -45,7 +45,7 @@ SpriteShapeRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
+  m_DynamicOccludee: 0
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -87,7 +87,7 @@ SpriteShapeRenderer:
   - {fileID: -4457726861206861528, guid: 013795027d1b2074ea94df55baae69a6, type: 3}
   - {fileID: -4457726861206861528, guid: 013795027d1b2074ea94df55baae69a6, type: 3}
   - {fileID: -4457726861206861528, guid: 013795027d1b2074ea94df55baae69a6, type: 3}
-  - {fileID: -3028080478662393, guid: d46a02dcf1e1ade4eb2be6d4a9c6dfe1, type: 3}
+  - {fileID: 4230193175985668223, guid: 636f02ec69ebf194b814d33619721888, type: 3}
   - {fileID: 343838636, guid: d46a02dcf1e1ade4eb2be6d4a9c6dfe1, type: 3}
   - {fileID: -1057585155, guid: d46a02dcf1e1ade4eb2be6d4a9c6dfe1, type: 3}
   - {fileID: 0}
@@ -97,8 +97,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: -0.25765884, y: -0.23457038, z: 0}
-    m_Extent: {x: 1.9443139, y: 1.2750449, z: 0}
+    m_Center: {x: -0.25765884, y: 0.08542955, z: 0}
+    m_Extent: {x: 1.9443139, y: 1.5950449, z: 0}
   m_SpriteSortPoint: 0
 --- !u!114 &2827487088913080206
 MonoBehaviour:
@@ -185,8 +185,8 @@ MonoBehaviour:
   m_Modifiers: []
   m_ColliderSegment:
   - {x: -1.7620777, y: -0.5120363}
-  - {x: -1.7399147, y: 0.59495556}
-  - {x: 1.2114651, y: 0.599204}
+  - {x: -1.752728, y: -0.04504192}
+  - {x: 1.2284472, y: -0.040750638}
   - {x: 1.2467189, y: -0.72931683}
   - {x: 1.1026793, y: -0.9252466}
   - {x: 0.87290156, y: -1.03986}
@@ -234,8 +234,8 @@ EdgeCollider2D:
   m_EdgeRadius: 0.25
   m_Points:
   - {x: -1.7620777, y: -0.5120363}
-  - {x: -1.7399147, y: 0.59495556}
-  - {x: 1.2114651, y: 0.599204}
+  - {x: -1.752728, y: -0.04504192}
+  - {x: 1.2284472, y: -0.040750638}
   - {x: 1.2467189, y: -0.72931683}
   - {x: 1.1026793, y: -0.9252466}
   - {x: 0.87290156, y: -1.03986}
