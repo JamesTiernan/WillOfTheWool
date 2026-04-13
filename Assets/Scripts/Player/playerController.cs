@@ -109,7 +109,10 @@ public class playerController : MonoBehaviour
             if(IsGrounded())
             {
                 rb.linearVelocityY = -1f;
-                rb.linearVelocityX *= 0.4f;
+                if (!GetComponent<conveyorEffect>().onConveyor)
+                {
+                    rb.linearVelocityX *= 0.4f;
+                }
             }
             else
             {
@@ -118,7 +121,7 @@ public class playerController : MonoBehaviour
             
             if(moving)
             {
-                rb.linearVelocityX = horizontal * speed;
+                rb.linearVelocityX = horizontal * speed; 
             }
             if(stuck.isStuck){rb.linearVelocityX *= .4f;}
         }
