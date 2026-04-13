@@ -1747,6 +1747,7 @@ Transform:
   m_GameObject: {fileID: 625891023}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.8429725, w: 0.53795666}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8429725, w: 0.53795666}
   m_LocalPosition: {x: 0.21977884, y: 0.23910096, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2458,7 +2459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003354158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.015551141, w: 0.9998791}
+  m_LocalRotation: {x: 0, y: 0, z: 0.015552286, w: 0.9998791}
   m_LocalPosition: {x: 0.2866374, y: 0.008919302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3213,7 +3214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461842067}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.04865123, w: 0.99881583}
+  m_LocalRotation: {x: -0, y: -0, z: -0.048652373, w: 0.9988158}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7924,6 +7925,7 @@ GameObject:
   - component: {fileID: 6099702683716781073}
   - component: {fileID: 8421459802755115085}
   - component: {fileID: 8975845735709631612}
+  - component: {fileID: 8975845735709631618}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -8331,6 +8333,20 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!114 &8975845735709631618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8811432891456453018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c61fef374b0884282850563e523023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onConveyor: 0
+  speed: 0
 --- !u!1 &9119950622475256151
 GameObject:
   m_ObjectHideFlags: 0

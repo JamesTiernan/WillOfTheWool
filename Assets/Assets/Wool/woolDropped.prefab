@@ -61,6 +61,7 @@ GameObject:
   - component: {fileID: 3505852030122845980}
   - component: {fileID: 5582159348518845423}
   - component: {fileID: 1051815096830102442}
+  - component: {fileID: -9189856935807286171}
   m_Layer: 0
   m_Name: woolDropped
   m_TagString: Untagged
@@ -269,6 +270,20 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
+--- !u!114 &-9189856935807286171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8164450900695082596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97c61fef374b0884282850563e523023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onConveyor: 0
+  speed: 0
 --- !u!1001 &871397412888064522
 PrefabInstance:
   m_ObjectHideFlags: 0
