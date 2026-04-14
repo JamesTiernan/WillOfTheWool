@@ -31,8 +31,8 @@ public class playerController : MonoBehaviour
     [SerializeField] Sprite noWool;
     [SerializeField] public lastCheckpoint checkpointManager;
     getStuck stuck;
-    Vector2 mouseWorldPosition;
-    Vector2 mouseRelativePosition;
+    Vector3 mouseWorldPosition;
+    Vector3 mouseRelativePosition;
     private healthManager healthManager;
     public bool flipped = false;
     public bool stunned;
@@ -66,8 +66,9 @@ public class playerController : MonoBehaviour
     {
         if (Mouse.current != null)
         {
-            Vector2 screenPosition = Mouse.current.position.ReadValue();
-            mouseWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
+            Vector3 mousePos = Mouse.current.position.ReadValue(); 
+            mousePos.z = 6;
+            mouseWorldPosition = mainCamera.ScreenToWorldPoint(mousePos);
             mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)gameObject.transform.position;
 
             if(lineRenderer != null)
