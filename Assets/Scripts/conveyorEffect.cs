@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class conveyorEffect : MonoBehaviour
 {
-    public bool origin;
     public bool onConveyor = false;
     public float speed;
 
@@ -28,7 +27,6 @@ public class conveyorEffect : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<conveyorEffect>() != null)
             {
-                collision.gameObject.GetComponent<conveyorEffect>().origin = false;
                 collision.gameObject.GetComponent<conveyorEffect>().speed = speed;
                 collision.gameObject.GetComponent<conveyorEffect>().onConveyor = true;
             }
@@ -41,7 +39,6 @@ public class conveyorEffect : MonoBehaviour
         {
             if (collision.gameObject.GetComponent<conveyorEffect>() != null)
             {
-                collision.gameObject.GetComponent<conveyorEffect>().speed = 0;
                 collision.gameObject.GetComponent<conveyorEffect>().onConveyor = false;
             }
         }

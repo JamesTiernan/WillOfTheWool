@@ -20,7 +20,6 @@ public class conveyor : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<conveyorEffect>() != null)
         {
-            collision.gameObject.GetComponent<conveyorEffect>().origin = true;
             collision.gameObject.GetComponent<conveyorEffect>().speed = conveyorSpeed;
             collision.gameObject.GetComponent<conveyorEffect>().onConveyor = true;
         }
