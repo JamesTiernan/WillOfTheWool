@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject playerRig;
 
     [Header("Movement")]
+    [SerializeField] private LayerMask groundMask;
     [SerializeField] float speed;
     [SerializeField] float jumpPower;
 
@@ -122,10 +123,34 @@ public class playerController : MonoBehaviour
             
             if(moving)
             {
-                rb.linearVelocityX = horizontal * speed; 
+                rb.linearVelocityX = horizontal * speed;
+                
+                
+
             }
-            if(stuck.isStuck){rb.linearVelocityX *= .4f;}
+
+            bool check = Physics2D.OverlapCircle(new Vector2(transform.position.x + 0.6f,transform.position.y + 0.5f),.5f,0,groundMask);
+            Debug.Log($"CHECKECH: {check}");
+            
+            if(check){
+                animator.SetBool("push",true);
+            }
+            else{
+                animator.SetBool("push",false);
+            }
+            //animator.SetBool("push",false);
+        
+            if(stuck.isStuck)
+            {
+                rb.linearVelocityX *= .4f;
+            }
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x + 0.5f,transform.position.y + 0.5f,0f),0.5f);
     }
 
     public void Move(InputAction.CallbackContext context)
