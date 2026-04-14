@@ -11,8 +11,10 @@ public class findBounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PolygonCollider2D bounds = GameObject.FindGameObjectWithTag("CameraBounds").GetComponent<PolygonCollider2D>();
-        GetComponent<Unity.Cinemachine.CinemachineConfiner2D>().BoundingShape2D = bounds;
-
+        if(GameObject.FindGameObjectWithTag("CameraBounds") != null)
+        {
+            PolygonCollider2D bounds = GameObject.FindGameObjectWithTag("CameraBounds").GetComponent<PolygonCollider2D>();
+            GetComponent<Unity.Cinemachine.CinemachineConfiner2D>().BoundingShape2D = bounds;
+        }
     }
 }
