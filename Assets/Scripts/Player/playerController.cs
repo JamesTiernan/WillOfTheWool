@@ -31,8 +31,8 @@ public class playerController : MonoBehaviour
     [SerializeField] Sprite noWool;
     [SerializeField] public lastCheckpoint checkpointManager;
     getStuck stuck;
-    Vector2 mouseWorldPosition;
-    Vector2 mouseRelativePosition;
+    Vector3 mouseWorldPosition;
+    Vector3 mouseRelativePosition;
     private healthManager healthManager;
     public bool flipped = false;
     public bool stunned;
@@ -66,8 +66,9 @@ public class playerController : MonoBehaviour
     {
         if (Mouse.current != null)
         {
-            Vector2 screenPosition = Mouse.current.position.ReadValue();
-            mouseWorldPosition = mainCamera.ScreenToWorldPoint(screenPosition);
+            Vector3 mousePos = Mouse.current.position.ReadValue(); 
+            mousePos.z = 6;
+            mouseWorldPosition = mainCamera.ScreenToWorldPoint(mousePos);
             mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)gameObject.transform.position;
 
             if(lineRenderer != null)
@@ -109,7 +110,10 @@ public class playerController : MonoBehaviour
             if(IsGrounded())
             {
                 rb.linearVelocityY = -1f;
-                rb.linearVelocityX *= 0.4f;
+                if (!GetComponent<conveyorEffect>().onConveyor)
+                {
+                    rb.linearVelocityX *= 0.4f;
+                }
             }
             else
             {
@@ -118,7 +122,7 @@ public class playerController : MonoBehaviour
             
             if(moving)
             {
-                rb.linearVelocityX = horizontal * speed;
+                rb.linearVelocityX = horizontal * speed; 
             }
             if(stuck.isStuck){rb.linearVelocityX *= .4f;}
         }
