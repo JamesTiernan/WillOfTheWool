@@ -6,7 +6,7 @@ using System.Collections;
 public class OpenShop : MonoBehaviour, IInteractable
 {
 
-
+    [SerializeField] GameObject woolPrefab;
     [SerializeField] private GameObject ShopPanel;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,5 +33,12 @@ public class OpenShop : MonoBehaviour, IInteractable
     public void Close()
     {
         ShopPanel.SetActive(false);
+    }
+
+    public void BuyWool()
+    {
+        GameObject newObject = Instantiate(woolPrefab);
+        newObject.transform.position = transform.position;
+        
     }
 }
