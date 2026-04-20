@@ -89,6 +89,13 @@ public class playerController : MonoBehaviour
 
     }
 
+    public void Footstep()
+    {
+        if(IsGrounded())
+        {
+            GetComponent<SFXPlayer>().PlaySound(UnityEngine.Random.Range(0,3),0.2f);
+        }
+    }
     void FixedUpdate()
     {
         //Debug.Log($"Jump Timer : {jumpTimer}");
@@ -180,7 +187,13 @@ public class playerController : MonoBehaviour
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
             gameObject.transform.position += Vector3.up * .1f;
+            GetComponent<SFXPlayer>().PlaySound(4,0.1f);
         }
+    }
+
+    public void LandJump()
+    {
+        GetComponent<SFXPlayer>().PlaySound(5,0.3f);
     }
 
     private bool IsGrounded()
