@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3884916720862485625}
   - component: {fileID: 444869134867564923}
   - component: {fileID: 1061333144947923733}
+  - component: {fileID: 2553958176616344143}
   m_Layer: 12
   m_Name: Fire
   m_TagString: Fire
@@ -235,6 +236,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2553958176616344143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906032692292807521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5df7e17492b6604eb82d1533910e6f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3376453323471163221
 PrefabInstance:
   m_ObjectHideFlags: 0

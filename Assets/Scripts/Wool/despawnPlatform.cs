@@ -8,9 +8,7 @@ public class despawnPlatform : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GetComponent<SFXPlayer>().PlaySound(0,0.1f);
         Invoke(nameof(Despawn),time);
-        
     }
 
     private void Despawn()

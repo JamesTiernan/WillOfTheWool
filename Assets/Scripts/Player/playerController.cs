@@ -31,6 +31,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject heldWool;
     [SerializeField] Sprite noWool;
     [SerializeField] public lastCheckpoint checkpointManager;
+
     getStuck stuck;
     Vector3 mouseWorldPosition;
     Vector3 mouseRelativePosition;
@@ -91,9 +92,33 @@ public class playerController : MonoBehaviour
 
     public void Footstep()
     {
+        GameObject GroundStep = Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer).gameObject;
         if(IsGrounded())
         {
-            GetComponent<SFXPlayer>().PlaySound(UnityEngine.Random.Range(0,3),0.2f);
+            if(GroundStep.CompareTag("footstepGrass"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(0,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepDirt"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(1,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepMetal"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(2,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepRock"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(3,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepSand"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(4,0.2f);
+            }
+            else
+            {
+                GetComponent<SFXPlayer>().PlaySound(3,0.2f);
+            }
         }
     }
     void FixedUpdate()
@@ -187,13 +212,13 @@ public class playerController : MonoBehaviour
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
             gameObject.transform.position += Vector3.up * .1f;
-            GetComponent<SFXPlayer>().PlaySound(4,0.1f);
+            GetComponent<SFXPlayer>().PlaySound(5,0.1f);
         }
     }
 
     public void LandJump()
     {
-        GetComponent<SFXPlayer>().PlaySound(5,0.3f);
+        Footstep();
     }
 
     private bool IsGrounded()
