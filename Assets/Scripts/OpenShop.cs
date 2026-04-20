@@ -30,6 +30,20 @@ public class OpenShop : MonoBehaviour, IInteractable
     public void Interact()
     {
         ShopPanel.SetActive(true);
+        GameObject button = GameObject.FindGameObjectWithTag("shopButton");
+        GameObject fbutton = GameObject.FindGameObjectWithTag("fbutton");
+        GameObject sbutton = GameObject.FindGameObjectWithTag("sbutton");
+        GameObject mbutton = GameObject.FindGameObjectWithTag("mbutton");
+        button.GetComponent<Button>().onClick.RemoveAllListeners();
+        button.GetComponent<Button>().onClick.AddListener(BuyWool);
+        fbutton.GetComponent<Button>().onClick.RemoveAllListeners();
+        fbutton.GetComponent<Button>().onClick.AddListener(FireWool);
+        sbutton.GetComponent<Button>().onClick.RemoveAllListeners();
+        sbutton.GetComponent<Button>().onClick.AddListener(StickyWool);
+        mbutton.GetComponent<Button>().onClick.RemoveAllListeners();
+        mbutton.GetComponent<Button>().onClick.AddListener(MagnetWool);
+        
+
     }
 
 
@@ -51,6 +65,7 @@ public class OpenShop : MonoBehaviour, IInteractable
         {
         GameObject newObject = Instantiate(woolPrefab);
         newObject.transform.position = transform.position;
+        Debug.Log(transform.position);
         coinManager.CoinRemove(1);
         }
     }
