@@ -4,6 +4,7 @@ public class SFXPlayer : MonoBehaviour
 {
     [SerializeField] AudioClip[] sounds;
     AudioSource soundPlayer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
