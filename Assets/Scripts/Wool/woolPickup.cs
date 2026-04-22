@@ -54,6 +54,7 @@ public class woolPickup : MonoBehaviour
         GameObject light = Instantiate(lightSpawn);
         light.transform.parent = transform;
         light.transform.position = transform.position;
+        GetComponent<SFXPlayer>().PlaySound(1,0.1f);
     }
     
     void PickupCooldown()
