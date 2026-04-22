@@ -18,6 +18,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject playerRig;
 
     [Header("Movement")]
+    [SerializeField] private LayerMask groundMask;
     [SerializeField] float speed;
     [SerializeField] float jumpPower;
 
@@ -30,6 +31,7 @@ public class playerController : MonoBehaviour
     [SerializeField] GameObject heldWool;
     [SerializeField] Sprite noWool;
     [SerializeField] public lastCheckpoint checkpointManager;
+
     getStuck stuck;
     Vector3 mouseWorldPosition;
     Vector3 mouseRelativePosition;
@@ -88,6 +90,37 @@ public class playerController : MonoBehaviour
 
     }
 
+    public void Footstep()
+    {
+        GameObject GroundStep = Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer).gameObject;
+        if(IsGrounded())
+        {
+            if(GroundStep.CompareTag("footstepGrass"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(0,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepDirt"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(1,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepMetal"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(2,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepRock"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(3,0.2f);
+            }
+            else if(GroundStep.CompareTag("footstepSand"))
+            {
+                GetComponent<SFXPlayer>().PlaySound(4,0.2f);
+            }
+            else
+            {
+                GetComponent<SFXPlayer>().PlaySound(3,0.2f);
+            }
+        }
+    }
     void FixedUpdate()
     {
         //Debug.Log($"Jump Timer : {jumpTimer}");
@@ -122,10 +155,34 @@ public class playerController : MonoBehaviour
             
             if(moving)
             {
-                rb.linearVelocityX = horizontal * speed; 
+                rb.linearVelocityX = horizontal * speed;
+                
+                
+
             }
-            if(stuck.isStuck){rb.linearVelocityX *= .4f;}
+
+            bool check = Physics2D.OverlapCircle(new Vector2(transform.position.x + 0.6f,transform.position.y + 0.5f),.5f,0,groundMask);
+            Debug.Log($"CHECKECH: {check}");
+            
+            if(check){
+                animator.SetBool("push",true);
+            }
+            else{
+                animator.SetBool("push",false);
+            }
+            //animator.SetBool("push",false);
+        
+            if(stuck.isStuck)
+            {
+                rb.linearVelocityX *= .4f;
+            }
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+
+        Gizmos.DrawWireSphere(new Vector3(transform.position.x + 0.5f,transform.position.y + 0.5f,0f),0.5f);
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -155,7 +212,13 @@ public class playerController : MonoBehaviour
             animator.SetBool("isJumping",true);
             rb.linearVelocityY = jumpPower;
             gameObject.transform.position += Vector3.up * .1f;
+            GetComponent<SFXPlayer>().PlaySound(5,0.1f);
         }
+    }
+
+    public void LandJump()
+    {
+        Footstep();
     }
 
     private bool IsGrounded()
