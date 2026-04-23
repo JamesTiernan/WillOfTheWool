@@ -92,7 +92,16 @@ public class playerController : MonoBehaviour
 
     public void Footstep()
     {
-        GameObject GroundStep = Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer).gameObject;
+        GameObject GroundStep = null;
+        Collider2D coll = Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer);
+        if(coll != null)
+        {
+            GroundStep = coll.gameObject;
+        }
+        if(GroundStep == null)
+        {
+            return;
+        }
         if(IsGrounded())
         {
             if(GroundStep.CompareTag("footstepGrass"))

@@ -6,7 +6,6 @@ public class CoinPickup : MonoBehaviour
     CoinManager coinManager;
     private void Start()
     {
-
         coinManager = GameObject.FindGameObjectWithTag("CoinManager").GetComponent<CoinManager>();
 
     }

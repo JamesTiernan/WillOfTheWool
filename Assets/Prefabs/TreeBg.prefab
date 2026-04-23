@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 535065068739558559}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.32, y: -3.27, z: 0}
+  m_LocalPosition: {x: 1.32, y: -3.27, z: 0.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -113,7 +113,7 @@ Transform:
   m_GameObject: {fileID: 4770357356978112065}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.5348125, y: -3.8446455, z: 0}
+  m_LocalPosition: {x: 3.5348125, y: -3.8446455, z: 0.408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 5037730325356954906}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.571311, y: -4.0955615, z: 0}
+  m_LocalPosition: {x: -1.571311, y: -4.0955615, z: -0.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,6 +270,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7196863448690869437}
+  - component: {fileID: 3671657322466199271}
   m_Layer: 0
   m_Name: TreeBg
   m_TagString: Untagged
@@ -297,6 +298,19 @@ Transform:
   - {fileID: 603117109358303670}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3671657322466199271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5517562617651932819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84fd523aa2fd51c4682d040feef7c2b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colour: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &5941850055995909966
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +337,7 @@ Transform:
   m_GameObject: {fileID: 5941850055995909966}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.2927823, y: -3.7317338, z: 0}
+  m_LocalPosition: {x: 2.2927823, y: -3.7317338, z: -0.921}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -461,7 +475,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -3
   m_Sprite: {fileID: 21300000, guid: dbcec9df8b3ce6a46806668a95631d75, type: 3}
-  m_Color: {r: 0.72327036, g: 0.6397343, b: 0.55723655, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
