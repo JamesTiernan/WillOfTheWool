@@ -10,17 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35750c24b86b6674598bbf2a90ef226c, type: 3}
-  m_Name: Tutorial
+  m_Name: Tutorial1
   m_EditorClassIdentifier: 
-  npcName: Tutorial Guy
-  npcImage: {fileID: -6949385356650754131, guid: a7e1f3f5c643d1a4bb7c818871d60da6, type: 3}
+  npcName: 'Claude '
+  npcImage: {fileID: -3313770187236780576, guid: e76b25f1b09b1c3469eb69a796976773, type: 3}
   dialogue:
-  - How did you forget how to use your wool
-  - 'I guess im going to have to jog your memory '
-  - 'Select the wool using Tab '
-  - Then hold left click and move the mouse where you want to aim then let go to
-    fire
-  - Give it a go
+  - If your going to go on a adventure it might be wise to practice a bit before
+    heading out
+  - 'Try throwing wool '
+  - Use tab to select your wool
+  - Then Hold in Left Click then aim
+  - Then let go to fire
+  - 'Your normal wool can be used to create platforms '
   autoProgressLines: 
   autoProgressDelay: 1.5
   typeSpeed: 0

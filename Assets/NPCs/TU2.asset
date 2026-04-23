@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35750c24b86b6674598bbf2a90ef226c, type: 3}
-  m_Name: Tutorial
+  m_Name: TU2
   m_EditorClassIdentifier: 
-  npcName: Tutorial Guy
-  npcImage: {fileID: -6949385356650754131, guid: a7e1f3f5c643d1a4bb7c818871d60da6, type: 3}
+  npcName: Claude
+  npcImage: {fileID: -3717699255753912316, guid: 4cd8a684f61b5634ca1501944589e788, type: 3}
   dialogue:
-  - How did you forget how to use your wool
-  - 'I guess im going to have to jog your memory '
-  - 'Select the wool using Tab '
-  - Then hold left click and move the mouse where you want to aim then let go to
-    fire
-  - Give it a go
+  - Theirs a frog up ahead
+  - 'You will need to use fire wool kill it '
+  - Select it in your Wool Wheel
   autoProgressLines: 
   autoProgressDelay: 1.5
   typeSpeed: 0
