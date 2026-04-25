@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 
 
@@ -9,10 +11,13 @@ public class CloseShop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
+            if(ShopPanel != null)
+            {
+                ShopPanel.GetComponentInParent<Animator>().SetBool("IsOpen",false);
             Debug.Log("Exited");
-            ShopPanel.SetActive(false);
+            }
         }
     }
 }

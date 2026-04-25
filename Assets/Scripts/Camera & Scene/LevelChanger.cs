@@ -13,6 +13,7 @@ public class LevelChanger : MonoBehaviour
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         GetComponent<SpriteRenderer>().sprite = null;
 
         if (_connection == LevelConnection.ActiveConnection && player != null)
@@ -26,7 +27,7 @@ public class LevelChanger : MonoBehaviour
         
         if (fadeAnimator == null)
         {
-            GameObject fade = GameObject.FindGameObjectWithTag("FadeAnim");
+            GameObject fade = GameObject.FindGameObjectWithTag("fadeAnim");
             if(fade != null)
             {
                 fadeAnimator = fade.GetComponent<Animator>();

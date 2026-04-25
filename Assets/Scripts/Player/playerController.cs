@@ -270,7 +270,8 @@ public class playerController : MonoBehaviour
         {
             heldWool.GetComponent<SpriteRenderer>().sprite = noWool;
         }
-        newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10; 
+        newObj.GetComponent<Rigidbody2D>().linearVelocity = mouseRelativePosition.normalized * 10;
+        GetComponent<SFXPlayer>().PlaySound(7,.2f);
     }
 
     void DrawTrajectory()

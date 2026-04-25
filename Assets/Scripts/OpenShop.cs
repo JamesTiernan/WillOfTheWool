@@ -42,6 +42,7 @@ public class OpenShop : MonoBehaviour, IInteractable
         sbutton.GetComponent<Button>().onClick.AddListener(StickyWool);
         mbutton.GetComponent<Button>().onClick.RemoveAllListeners();
         mbutton.GetComponent<Button>().onClick.AddListener(MagnetWool);
+        ShopPanel.GetComponentInParent<Animator>().SetBool("IsOpen",true);;
         
 
     }
