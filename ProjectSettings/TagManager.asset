@@ -19,6 +19,7 @@ TagManager:
   - footstepMetal
   - footstepRock
   - footstepSand
+  - fadeAnim
   layers:
   - Default
   - TransparentFX
@@ -53,6 +54,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 27831023
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

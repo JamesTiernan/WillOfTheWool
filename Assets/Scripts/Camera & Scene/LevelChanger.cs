@@ -14,13 +14,24 @@ public class LevelChanger : MonoBehaviour
     private void Start()
     {
         GetComponent<SpriteRenderer>().sprite = null;
-        player = GameObject.FindGameObjectWithTag("Player");
-
-        if (fadeAnimator == null)
-            fadeAnimator = GameObject.Find("Fade").GetComponent<Animator>();
 
         if (_connection == LevelConnection.ActiveConnection && player != null)
             player.transform.position = Spawnpoint.position;
+    }
+
+    void Update()
+    {
+        if(player == null)
+            player = GameObject.FindGameObjectWithTag("Player");
+        
+        if (fadeAnimator == null)
+        {
+            GameObject fade = GameObject.FindGameObjectWithTag("FadeAnim");
+            if(fade != null)
+            {
+                fadeAnimator = fade.GetComponent<Animator>();
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
