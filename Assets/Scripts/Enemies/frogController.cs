@@ -31,11 +31,13 @@ public class frogController : MonoBehaviour
 
     void Hop()
     {
+        GetComponent<SFXPlayer>().PlaySound(0,0.05f);
         animator.SetTrigger("Hop");
     }
 
     public void Move()
     {
+        GetComponent<SFXPlayer>().PlaySound(1,0.05f);
         hops += 1;
         animator.Play("Idle",animator.GetLayerIndex("Base Layer"));
         //Debug.Log($"{transform.localEulerAngles.y} // {hops}");

@@ -19,8 +19,11 @@ public class CoinManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Coin != null)
+        {
+            Coin.text = $"Coins: {Coins}";
+        }
         
-        Coin.text = Coins.ToString();
     }
 
     public int CoinAdd(int amount)
