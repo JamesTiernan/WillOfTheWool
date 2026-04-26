@@ -104,12 +104,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 230
-        width: 1600
-        height: 2330
+        y: 45
+        width: 2197
+        height: 2398
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 147, y: 22, z: 160, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -121,11 +121,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Tree_1_1
+      rect:
+        serializedVersion: 2
+        x: 2199
+        y: 1345
+        width: 7
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4a4b9245ae231d498378a573fde00fe
+      internalID: 1155739420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 60205bc150d57b7488308b4ddff1476d
     internalID: 0
     vertices: []
     indices: 
@@ -136,6 +158,7 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Tree_1_0: -1190875100781553689
+      Tree_1_1: 1155739420
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
