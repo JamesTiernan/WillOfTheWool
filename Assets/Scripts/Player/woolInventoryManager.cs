@@ -28,6 +28,7 @@ public class woolInventoryManager : MonoBehaviour
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = false;
                 GetComponent<healthManager>().health -= 1;
+                GetComponent<SFXPlayer>().PlaySound(8,.1f);
                 return true;
             }
         }
@@ -65,6 +66,7 @@ public class woolInventoryManager : MonoBehaviour
             {
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<healthManager>().health += 1;
+                GetComponent<SFXPlayer>().PlaySound(9,.1f);
                 return true;
             }
             
@@ -77,6 +79,7 @@ public class woolInventoryManager : MonoBehaviour
                 woolHeld[i].GetComponent<SpriteRenderer>().sprite = woolType; 
                 woolHeld[i].GetComponent<SpriteRenderer>().enabled = true;
                 GetComponent<healthManager>().health += 1;
+                GetComponent<SFXPlayer>().PlaySound(9,.1f);
                 return true;
             }
             

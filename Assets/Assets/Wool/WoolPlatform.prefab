@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 72282852591722467}
   m_Layer: 6
   m_Name: WoolPlatform
-  m_TagString: Untagged
+  m_TagString: footstepGrass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -291,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690980121295371588, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_Color.a
-      value: 1
+      value: 0.38958392
       objectReference: {fileID: 0}
     - target: {fileID: 8007492822707960508, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,7 +347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915818331317058120, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.000000029802322
+      value: -1.0173602
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

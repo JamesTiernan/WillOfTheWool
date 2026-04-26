@@ -12,10 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35750c24b86b6674598bbf2a90ef226c, type: 3}
   m_Name: Tutorial
   m_EditorClassIdentifier: 
-  npcName: Wooly
-  npcImage: {fileID: 0}
+  npcName: Tutorial Guy
+  npcImage: {fileID: -6949385356650754131, guid: a7e1f3f5c643d1a4bb7c818871d60da6, type: 3}
   dialogue:
-  - 
+  - How did you forget how to use your wool
+  - 'I guess im going to have to jog your memory '
+  - 'Select the wool using Tab '
+  - Then hold left click and move the mouse where you want to aim then let go to
+    fire
+  - Give it a go
   autoProgressLines: 
   autoProgressDelay: 1.5
   typeSpeed: 0

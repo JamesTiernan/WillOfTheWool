@@ -25,6 +25,8 @@ public class bounceShroom : MonoBehaviour
             Vector2 totalForce = force.normalized * bounceForce;
             Debug.Log($"Force: {totalForce}");
             other.GetComponent<Rigidbody2D>().linearVelocity = totalForce;
+            GetComponent<SFXPlayer>().PlaySound(0,.07f);
+            GetComponent<Animator>().Play("bounce");
         }
     }
 }

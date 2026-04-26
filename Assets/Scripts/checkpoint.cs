@@ -17,8 +17,13 @@ public class checkpoint : MonoBehaviour
         {
            lastCheckpoint checkpointSet = other.GetComponent<playerController>().checkpointManager;
            checkpointSet.checkpointPosition = transform;
-           GetComponent<SpriteRenderer>().sprite = active;
-           GetComponent<Light2D>().enabled = true;
+
+           if(!GetComponent<Light2D>().enabled)
+            {
+                GetComponent<SFXPlayer>().PlaySound(0,.2f);
+                GetComponent<SpriteRenderer>().sprite = active;
+                GetComponent<Light2D>().enabled = true;
+            }
         }
     }
 }

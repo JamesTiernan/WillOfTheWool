@@ -25,6 +25,7 @@ public class CoinManager : MonoBehaviour
 
     public int CoinAdd(int amount)
     {
+        GetComponent<SFXPlayer>().PlaySound(0,.05f);
         Coins += amount;
         Debug.Log(Coins);
         return Coins;
