@@ -8,7 +8,7 @@ public class gameManager : MonoBehaviour
        string currentSceneName = SceneManager.GetActiveScene().name;
        Debug.Log($"{currentSceneName}  -- reloaded");
        SceneManager.LoadScene(currentSceneName);
-       player.transform.position = GetComponent<lastCheckpoint>().checkpointPosition.position;
+       player.transform.position = GetComponent<lastCheckpoint>().checkpointPosition;
        player.GetComponent<healthManager>().health = player.GetComponent<healthManager>().maxHealth;
        player.GetComponent<healthManager>().gameoverScreen.SetActive(false);
        player.GetComponent<healthManager>().isDead = false;

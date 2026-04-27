@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1016916192404912194}
   - component: {fileID: 6162155413084073781}
-  - component: {fileID: 8623224462341152618}
   - component: {fileID: 523331352331170061}
   - component: {fileID: 3657836558014828805}
+  - component: {fileID: 7787251267887308902}
   m_Layer: 6
   m_Name: Conveyor
   m_TagString: Untagged
@@ -90,19 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8623224462341152618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 29678830147683426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: effde3687d1d56c4c87481d6741fad62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conveyorSpeed: 3
 --- !u!61 &523331352331170061
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +158,16 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7787251267887308902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29678830147683426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: effde3687d1d56c4c87481d6741fad62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conveyorSpeed: 3

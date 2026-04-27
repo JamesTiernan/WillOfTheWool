@@ -13,7 +13,7 @@ public class conveyor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -30,6 +30,7 @@ public class conveyor : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<conveyorEffect>() != null)
         {
+            collision.gameObject.GetComponent<conveyorEffect>().origin = false;
             collision.gameObject.GetComponent<conveyorEffect>().speed = 0;
             collision.gameObject.GetComponent<conveyorEffect>().onConveyor = false;
         }
