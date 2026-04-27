@@ -2122,7 +2122,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 780510315}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9488942, w: 0.31559452}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9489009, w: 0.31557435}
   m_LocalPosition: {x: 0.18284714, y: -0.2015309, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2347,7 +2347,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863717090}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.9999992, w: -0.0012684724}
+  m_LocalRotation: {x: 0, y: 0, z: -0.9999992, w: -0.0012741451}
   m_LocalPosition: {x: 0.044615228, y: -0.21228749, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2445,7 +2445,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 907099449}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.36300468, w: 0.9317874}
+  m_LocalRotation: {x: 0, y: 0, z: 0.36303765, w: 0.9317745}
   m_LocalPosition: {x: 0.4045256, y: -0.013966411, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2765,7 +2765,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003354158}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.015551526, w: 0.99987906}
+  m_LocalRotation: {x: 0, y: 0, z: 0.015551141, w: 0.9998791}
   m_LocalPosition: {x: 0.2866374, y: 0.008919302, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3520,7 +3520,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461842067}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.04865728, w: 0.9988156}
+  m_LocalRotation: {x: -0, y: -0, z: -0.04865123, w: 0.99881583}
   m_LocalPosition: {x: 0.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5545,7 +5545,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1868683935}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.29430795, w: -0.95571065}
+  m_LocalRotation: {x: -0, y: -0, z: 0.29432148, w: -0.95570654}
   m_LocalPosition: {x: 0.4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6372,7 +6372,7 @@ Transform:
   m_GameObject: {fileID: 2009031152}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 303.1, y: 25.3, z: -10}
+  m_LocalPosition: {x: 94.61, y: 13.639999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7155,7 +7155,7 @@ Transform:
   m_GameObject: {fileID: 6008685832909004661}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 303.1, y: 25.3, z: -10}
+  m_LocalPosition: {x: 94.61, y: 13.639999, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7274,7 +7274,7 @@ Transform:
   m_GameObject: {fileID: 8811432891456453018}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 303.1, y: 24.4, z: 0}
+  m_LocalPosition: {x: 94.61, y: 12.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7359,11 +7359,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7050501850461619726, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7690980121295371588, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_Color.a
-      value: 0.0036590577
+      value: 0.43429032
       objectReference: {fileID: 0}
     - target: {fileID: 8007492822707960508, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7419,7 +7419,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915818331317058120, guid: eb2d243ade9997b42acad82ff4c70f27, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.4908524
+      value: -1.4142742
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8309,6 +8309,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 93bb6167-a2a6-4140-a767-a16e40f4682e
     m_ActionName: 'Player/ThrowPress[/Mouse/leftButton]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5364431644398951512}
+        m_TargetAssemblyTypeName: playerController, Assembly-CSharp
+        m_MethodName: EmptyHand
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 20c7d117-93c0-4f2a-ae0e-c1d1f31ef63b
+    m_ActionName: 'Player/EmptyHand[/Mouse/rightButton]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player

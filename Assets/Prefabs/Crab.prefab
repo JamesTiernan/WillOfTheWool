@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840ebb0e89566064d95e9e651cc40667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 6
+  damageAmount: 8
 --- !u!58 &4808115592775660491
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2309682734840394497
 Transform:
   m_ObjectHideFlags: 0
@@ -633,7 +633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 840ebb0e89566064d95e9e651cc40667, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageAmount: 3
+  damageAmount: 5
 --- !u!61 &2721804271658996072
 BoxCollider2D:
   m_ObjectHideFlags: 0
