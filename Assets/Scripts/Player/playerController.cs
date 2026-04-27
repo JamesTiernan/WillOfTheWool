@@ -69,12 +69,21 @@ public class playerController : MonoBehaviour
 
     void Update()
     {
+        if(GetComponent<healthManager>().isDead)
+        {
+            GetComponent<SpriteRenderer>().enabled = false;
+            return;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().enabled = true;
+        }
         if (Mouse.current != null)
         {
             Vector3 mousePos = Mouse.current.position.ReadValue(); 
             mousePos.z = 6;
             mouseWorldPosition = mainCamera.ScreenToWorldPoint(mousePos);
-            mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)gameObject.transform.position;
+            mouseRelativePosition =  (Vector2)mouseWorldPosition - (Vector2)mainCamera.transform.position;
 
             if(lineRenderer != null)
             {
@@ -95,6 +104,7 @@ public class playerController : MonoBehaviour
 
     public void EmptyHand()
     {
+        if(GetComponent<healthManager>().isDead){return;}
         if(!isThrowing)
         {
             itemWheelController itemWheelC = weaponWheel.GetComponent<itemWheelController>();
@@ -104,6 +114,7 @@ public class playerController : MonoBehaviour
 
     public void Footstep()
     {
+        if(GetComponent<healthManager>().isDead){return;}
         GameObject GroundStep = null;
         Collider2D coll = Physics2D.OverlapCapsule(groundCheck.position,new Vector2(0.8f,0.1f),CapsuleDirection2D.Horizontal,0,groundLayer);
         if(coll != null)
@@ -144,6 +155,7 @@ public class playerController : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if(GetComponent<healthManager>().isDead){return;}
         //Debug.Log($"Jump Timer : {jumpTimer}");
         if(IsGrounded())
         {
@@ -177,9 +189,10 @@ public class playerController : MonoBehaviour
             if(moving)
             {
                 rb.linearVelocityX = horizontal * speed;
-                
-                
-
+                if (GetComponent<conveyorEffect>().onConveyor)
+                {
+                    rb.linearVelocityX += GetComponent<conveyorEffect>().speed;
+                }
             }
 
             bool check = Physics2D.OverlapCircle(new Vector2(transform.position.x + 0.6f,transform.position.y + 0.5f),.5f,0,groundMask);
@@ -202,12 +215,12 @@ public class playerController : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-
         Gizmos.DrawWireSphere(new Vector3(transform.position.x + 0.5f,transform.position.y + 0.5f,0f),0.5f);
     }
 
     public void Move(InputAction.CallbackContext context)
     {
+        if(GetComponent<healthManager>().isDead){return;}
         if(stunned){horizontal = 0;}
         else
         {
@@ -225,6 +238,7 @@ public class playerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
+        if(GetComponent<healthManager>().isDead){return;}
         //if(isThrowing){return;}
         if(stunned){return;}
         if(context.performed && jumpTimer > 0 || stuck.isStuck)
@@ -306,6 +320,7 @@ public class playerController : MonoBehaviour
     
     public void ThrowStart()
     {
+        if(GetComponent<healthManager>().isDead){return;}
         if(stunned){return;}
         if(itemWheelGUI.itemWheelSelected == true){return;}
         if(heldWool.GetComponent<SpriteRenderer>().sprite == noWool){return;}

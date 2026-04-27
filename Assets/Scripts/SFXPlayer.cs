@@ -23,6 +23,11 @@ public class SFXPlayer : MonoBehaviour
     {
         if(soundPlayer != null)
         {
+            if(sounds.GetLength(0) <= sfx)
+            {
+                Debug.LogWarning("SFX out of range.");
+                return;
+            }
             soundPlayer.resource = sounds[sfx];
             soundPlayer.pitch = 1;
             soundPlayer.volume = sFXManager.SFXValue();
