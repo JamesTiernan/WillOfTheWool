@@ -12,6 +12,9 @@ public class gameManager : MonoBehaviour
        player.GetComponent<healthManager>().health = player.GetComponent<healthManager>().maxHealth;
        player.GetComponent<healthManager>().gameoverScreen.SetActive(false);
        player.GetComponent<healthManager>().isDead = false;
+       player.GetComponent<conveyorEffect>().onConveyor = false;
+       player.GetComponent<conveyorEffect>().speed = 0;
+       player.GetComponent<conveyorEffect>().origin = false;
        player.GetComponent<woolInventoryManager>().RespawnWool();
     }
 }
