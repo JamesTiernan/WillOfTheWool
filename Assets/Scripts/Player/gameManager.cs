@@ -11,6 +11,7 @@ public class gameManager : MonoBehaviour
        player.transform.position = GetComponent<lastCheckpoint>().checkpointPosition.position;
        player.GetComponent<healthManager>().health = player.GetComponent<healthManager>().maxHealth;
        player.GetComponent<healthManager>().gameoverScreen.SetActive(false);
+       player.GetComponent<healthManager>().isDead = false;
        player.GetComponent<woolInventoryManager>().RespawnWool();
     }
 }
