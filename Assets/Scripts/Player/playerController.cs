@@ -50,6 +50,9 @@ public class playerController : MonoBehaviour
     [SerializeField] LineRenderer lineRenderer;
     [SerializeField] int linePoints = 175;
     [SerializeField] float timeBetweenPoints = 0.01f;
+
+    [Header("Wool Um-Hold")]
+    [SerializeField] GameObject weaponWheel;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -92,7 +95,11 @@ public class playerController : MonoBehaviour
 
     public void EmptyHand()
     {
-        
+        if(!isThrowing)
+        {
+            itemWheelController itemWheelC = weaponWheel.GetComponent<itemWheelController>();
+            itemWheelC.selectedItem.GetComponent<SpriteRenderer>().sprite = itemWheelC.noImage;
+        }
     }
 
     public void Footstep()
