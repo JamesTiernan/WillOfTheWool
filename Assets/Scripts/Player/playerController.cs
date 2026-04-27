@@ -90,6 +90,11 @@ public class playerController : MonoBehaviour
 
     }
 
+    public void EmptyHand()
+    {
+        
+    }
+
     public void Footstep()
     {
         GameObject GroundStep = null;
