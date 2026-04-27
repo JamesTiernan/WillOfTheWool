@@ -12369,23 +12369,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.052799225
+      value: -0.069
       objectReference: {fileID: 0}
     - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.7351
+      value: 1.688
       objectReference: {fileID: 0}
     - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0006954677
+      value: 0.11311653
       objectReference: {fileID: 0}
     - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.99999976
+      value: 0.9935818
+      objectReference: {fileID: 0}
+    - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2648604474776099466, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.08
+      value: 12.99
       objectReference: {fileID: 0}
     - target: {fileID: 5976148073545918804, guid: 6cc6ec5aa944b7a43aa800815e87a6f9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16761,13 +16765,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191753016}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.018540425, w: 0.99982816}
-  m_LocalPosition: {x: -4.7280006, y: 1.8310001, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.06270346, w: 0.9980322}
+  m_LocalPosition: {x: -4.698, y: 1.811, z: 0}
   m_LocalScale: {x: 0.5, y: 0.43894762, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 824086147}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.125}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 7.19}
 --- !u!212 &1191753018
 SpriteRenderer:
   m_ObjectHideFlags: 0
