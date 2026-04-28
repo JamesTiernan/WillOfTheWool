@@ -10,16 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35750c24b86b6674598bbf2a90ef226c, type: 3}
-  m_Name: TU2
+  m_Name: Tutorial1
   m_EditorClassIdentifier: 
-  npcName: Claude
+  npcName: 'Claude '
   npcImage: {fileID: -3313770187236780576, guid: e76b25f1b09b1c3469eb69a796976773, type: 3}
   dialogue:
-  - Theres a frog up ahead!
-  - Frogs will hop towards you when they see you.
-  - If you get too close they will attack you!
-  - You can attack enemies by throwing fire wool!
-  - Use [Tab] to open your weapon wheel and select Fire Wool.
+  - If you're going to go on a adventure, it might be wise to practice a bit before
+    heading out! Press [E] to Progress Dialogue.
+  - It's important to know how to use your wool!
+  - Use [Tab] to open and close the wool wheel.
+  - Then Hold [Left Click] to aim with the mouse.
+  - Release [Left Click] to fire!
+  - Your normal wool can be used to create platforms.
+  - Try it out on the grass in front of you, or the floating wool boxes!
   autoProgressLines: 
   autoProgressDelay: 1.5
   typeSpeed: 0
