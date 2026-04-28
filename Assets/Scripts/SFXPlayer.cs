@@ -10,7 +10,6 @@ public class SFXPlayer : MonoBehaviour
     void Start()
     {
         soundPlayer = GetComponent<AudioSource>();
-        sFXManager = GameObject.FindGameObjectWithTag("SFXManager").GetComponent<SFXManager>();
     }
 
     // Update is called once per frame
@@ -30,7 +29,6 @@ public class SFXPlayer : MonoBehaviour
             }
             soundPlayer.resource = sounds[sfx];
             soundPlayer.pitch = 1;
-            soundPlayer.volume = sFXManager.SFXValue();
             
             if(pitchRange != 0)
             {

@@ -16,7 +16,7 @@ public class checkpoint : MonoBehaviour
         if(other.CompareTag("Player"))
         {
            lastCheckpoint checkpointSet = other.GetComponent<playerController>().checkpointManager;
-           checkpointSet.checkpointPosition = transform;
+           checkpointSet.checkpointPosition = transform.position;
 
            if(!GetComponent<Light2D>().enabled)
             {

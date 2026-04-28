@@ -1,3 +1,4 @@
+using System.Linq;
 using UnityEngine;
 
 public class conveyorEffect : MonoBehaviour
@@ -5,6 +6,8 @@ public class conveyorEffect : MonoBehaviour
     public bool origin;
     public bool onConveyor = false;
     public float speed;
+
+    Collider2D[] colliders;
 
     Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
