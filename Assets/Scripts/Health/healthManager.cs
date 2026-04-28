@@ -33,7 +33,7 @@ public class healthManager : MonoBehaviour
     public void Damage(int amount ,bool drop)
     {
         if(GetComponent<playerController>().invincible){return;}
-        if(health == 0)
+        if((health - amount) < 0)
         {
             isDead = true;
             Debug.Log("GAME VOER SCREENEENR");
