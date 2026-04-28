@@ -36130,6 +36130,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6543986388189912813, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
+      propertyPath: m_Size.x
+      value: 41.838955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543986388189912813, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
+      propertyPath: m_Offset.x
+      value: 5.4508953
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43594,7 +43602,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6543986388189912813, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
+      propertyPath: m_Size.x
+      value: 42.03329
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543986388189912813, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
+      propertyPath: m_Offset.x
+      value: 2.4248524
+      objectReference: {fileID: 0}
+    - target: {fileID: 6543986388189912813, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3514255313465136797, guid: 8c808c75a9da45c4db078162e905ab62, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
