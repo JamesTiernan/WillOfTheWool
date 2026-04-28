@@ -12,6 +12,10 @@ public class doorSpawn : MonoBehaviour, IInteractable
     }
     public void Interact()
     {
+        if(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject == required)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject = null;
+        }
         objectSpawn.GetComponent<BoxCollider2D>().enabled = true;
         GameObject newObject = Instantiate(objectSpawn);
         newObject.transform.position = transform.position;
@@ -23,7 +27,6 @@ public class doorSpawn : MonoBehaviour, IInteractable
         {
             if(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject == required)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject = null;
                 return true;
             }
             else
