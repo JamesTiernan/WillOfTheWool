@@ -27,6 +27,7 @@ public class EnemyDetect : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        GetComponent<SFXPlayer>().PlaySound(0,.1f);
         Debug.Log("Is in range");
         if (other.CompareTag("Player"))
             attacking = true;

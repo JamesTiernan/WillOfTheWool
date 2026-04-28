@@ -29,4 +29,9 @@ public class enemyCrab : MonoBehaviour
         animator.SetTrigger("Attack");
         Invoke("Idle",3);
     }
+
+    public void SFXAttack()
+    {
+        GetComponent<SFXPlayer>().PlaySound(0,0.1f);
+    }
 }

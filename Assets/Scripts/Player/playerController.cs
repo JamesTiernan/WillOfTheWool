@@ -72,10 +72,18 @@ public class playerController : MonoBehaviour
         if(GetComponent<healthManager>().isDead)
         {
             GetComponent<SpriteRenderer>().enabled = false;
+            GetComponent<Rigidbody2D>().simulated = false;
+            gameObject.transform.localScale = new Vector3(0,0,0);
             return;
         }
         else
         {
+            if(GetComponent<Rigidbody2D>().simulated == false)
+            {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                GetComponent<Rigidbody2D>().simulated = true;
+            }
+            
             GetComponent<SpriteRenderer>().enabled = true;
         }
         if (Mouse.current != null)
@@ -152,6 +160,11 @@ public class playerController : MonoBehaviour
                 GetComponent<SFXPlayer>().PlaySound(3,0.2f);
             }
         }
+    }
+
+    public void FixH()
+    {
+        horizontal = 0;
     }
     void FixedUpdate()
     {
@@ -263,9 +276,12 @@ public class playerController : MonoBehaviour
 
     public void HitKnockback()
     {
+        if(invincible){return;}
+        GetComponent<SFXPlayer>().PlaySound(10,.1f);
         stunned = true;
         invincible = true;
         animator.Play("playerDamage");
+        
     }
 
 

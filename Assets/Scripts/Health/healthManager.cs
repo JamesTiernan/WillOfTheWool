@@ -4,6 +4,7 @@ public class healthManager : MonoBehaviour
 {
     [SerializeField] public int maxHealth;
     [SerializeField] GameObject damageEffect;
+    [SerializeField] GameObject deathParticles;
     [SerializeField] public int health;
 
     public bool isDead = false;
@@ -20,12 +21,16 @@ public class healthManager : MonoBehaviour
     {
         if(!isDead)
         {
-            if(health < 0)
+            if(health <= 0)
             {
                 isDead = true;
-                Debug.Log("GAME VOER SCREENEENR");
                 health = 0;
                 gameoverScreen.SetActive(true);
+                Debug.Log("dueideid");
+                gameoverScreen.GetComponent<SFXPlayer>().PlaySound(0,.1f);
+
+                GameObject newObj = Instantiate(deathParticles);
+                newObj.transform.position = transform.position;
             }
         }
     }
@@ -35,10 +40,7 @@ public class healthManager : MonoBehaviour
         if(GetComponent<playerController>().invincible){return;}
         if((health - amount) < 0)
         {
-            isDead = true;
-            Debug.Log("GAME VOER SCREENEENR");
             health = 0;
-            gameoverScreen.SetActive(true);
             return; 
         }
         Sprite newSprite = null;
