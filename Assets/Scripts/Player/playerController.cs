@@ -196,7 +196,7 @@ public class playerController : MonoBehaviour
             }
 
             bool check = Physics2D.OverlapCircle(new Vector2(transform.position.x + 0.6f,transform.position.y + 0.5f),.5f,0,groundMask);
-           // Debug.Log($"CHECKECH: {check}");
+            //Debug.Log($"CHECKECH: {check}");
             
             if(check){
                 animator.SetBool("push",true);
