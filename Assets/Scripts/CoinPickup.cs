@@ -12,7 +12,12 @@ public class CoinPickup : MonoBehaviour
     {
         if(coinManager == null)
         {
-            coinManager = GameObject.FindGameObjectWithTag("CoinManager").GetComponent<CoinManager>();
+            GameObject obj = GameObject.FindGameObjectWithTag("CoinManager");
+            if(obj != null)
+            {
+                coinManager = obj.GetComponent<CoinManager>();
+            }
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
