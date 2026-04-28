@@ -7,7 +7,6 @@ public class PauseButton : MonoBehaviour
 {
     [SerializeField] private GameObject PausePanel;
     [SerializeField] private GameObject Pausetxt;
-    [SerializeField] private GameObject Sliders;
 
     GameObject text;
     GameObject PauseScreen;
@@ -19,7 +18,6 @@ public class PauseButton : MonoBehaviour
         text = Pausetxt;
         PauseScreen.SetActive(false);
         text.SetActive(false);
-        Sliders.SetActive(false);
         active = false;
         
     }
@@ -29,7 +27,6 @@ public class PauseButton : MonoBehaviour
         {
             PauseScreen.SetActive(true);
             text.SetActive(true);
-            Sliders.SetActive(true);
             active = true;
             Time.timeScale = 0f;
             
@@ -39,7 +36,6 @@ public class PauseButton : MonoBehaviour
         {
             PauseScreen.SetActive(false);
             text.SetActive(false);
-            Sliders.SetActive(false);
             active = false;
             Time.timeScale = 1.0f;
         }
