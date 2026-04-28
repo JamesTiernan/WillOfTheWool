@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3780284611652227103}
   - component: {fileID: 2111632713586571706}
   - component: {fileID: 6610560878620599704}
-  - component: {fileID: 4562744284333471197}
   m_Layer: 8
   m_Name: Metal Box
   m_TagString: Magnetic
@@ -164,21 +163,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4562744284333471197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5448412041245254505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c61fef374b0884282850563e523023, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  origin: 0
-  onConveyor: 0
-  speed: 0
 --- !u!1001 &2950995687744278070
 PrefabInstance:
   m_ObjectHideFlags: 0

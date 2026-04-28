@@ -1,24 +1,28 @@
 using UnityEngine;
+using System.Collections;
+using System;
 
 public class enemyCrab : MonoBehaviour
 {
+    [SerializeField] float random = 1;
     Animator animator; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         animator = GetComponent<Animator>();
-        Idle();
+
+        Invoke("Idle",random);
     }
 
     void Idle()
     {
-        Invoke("Dive",3);
+        Invoke("Dive",UnityEngine.Random.Range(2,4));
     }
 
     void Dive()
     {
         animator.SetTrigger("Dive");
-        Invoke("Attack",3);
+        Invoke("Attack",UnityEngine.Random.Range(5,12));
     }
     void Attack()
     {

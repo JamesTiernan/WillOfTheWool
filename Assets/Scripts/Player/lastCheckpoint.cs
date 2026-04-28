@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class lastCheckpoint : MonoBehaviour
 {
-    public Transform checkpointPosition;
+    public Vector3 checkpointPosition;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

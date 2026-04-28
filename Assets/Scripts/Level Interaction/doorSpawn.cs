@@ -23,6 +23,7 @@ public class doorSpawn : MonoBehaviour, IInteractable
         {
             if(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject == required)
             {
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<heldItem>().heldObject = null;
                 return true;
             }
             else
